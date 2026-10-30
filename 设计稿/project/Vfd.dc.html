@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>DB600 主界面 复古VFD</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5FF2D6}a:hover{color:#A8FFEE}
+</style>
+</helmet>
+<div style="width: 960px; height: 264px; overflow: hidden; background: #000000; font-family: 'Noto Sans SC', sans-serif">
+<div style="width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: #050A0A; color: {{glow}}; display: grid; grid-template-columns: 120px 1fr 120px; grid-template-rows: 1fr 24px; box-sizing: border-box; padding: 8px 10px; column-gap: 8px">
+  <div style="display: flex; flex-direction: column; justify-content: center; gap: 6px">
+    <span style="font-size: 10px; color: #2F7F72; letter-spacing: 1px">INPUT 输入</span>
+    <span style="font-family: 'Share Tech Mono', monospace; font-size: 28px; line-height: 28px; color: {{glow}}">USB</span>
+    <span style="font-size: 10px; color: #2F7F72">纯解码器</span>
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #12302B; border-radius: 3px">
+    <div style="display: flex; gap: 10px; font-family: 'Share Tech Mono', monospace; font-size: 11px">
+      <span style="color: {{glow}}">■ PCM</span>
+      <span style="color: #1C4A43">□ DSD</span>
+      <span style="color: #1C4A43">□ MQA</span>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 4px">
+      <span style="font-family: 'Share Tech Mono', monospace; font-size: 50px; line-height: 54px; color: {{glow}}">192.0</span>
+      <span style="font-family: 'Share Tech Mono', monospace; font-size: 14px; color: #2F7F72">kHz</span>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 6px">
+    <span style="font-size: 10px; color: #2F7F72; letter-spacing: 1px">OUTPUT 输出</span>
+    <span style="font-family: 'Share Tech Mono', monospace; font-size: 28px; line-height: 28px; color: {{glow}}">4V</span>
+    <span style="font-size: 10px; color: #2F7F72">解码</span>
+  </div>
+  <div style="grid-column: 1 / 4; display: flex; align-items: center; justify-content: space-between; font-family: 'Share Tech Mono', monospace; font-size: 12px; color: #2F7F72">
+    <span>FILTER <span style="color: {{glow}}">FIL-2</span></span>
+    <span><span style="color: {{glow}}">L</span></span>
+    <span>Z <span style="color: {{glow}}">0Ω</span></span>
+    <span><span style="color: {{glow}}">OFF</span></span>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"glow":{"editor":"color","default":"#5FF2D6","options":["#5FF2D6","#8CFF6A","#FFB547","#7FB8FF"]},"$preview":{"width":960,"height":264}}'>
+class Component extends DCLogic {
+renderVals() {
+return { glow: this.props.glow ?? '#5FF2D6' };
+}
+}
+</script>
+</body>
+</html>

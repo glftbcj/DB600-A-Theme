@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>换皮菜单弹窗与刻度</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C42A1C}a:hover{color:#8E1D13}
+</style>
+</helmet>
+<div style="width: 960px; height: 900px; background: #0C0B0A; font-family: 'Noto Serif SC', serif; display: flex; flex-direction: column; gap: 12px; padding: 0 0 12px 0; box-sizing: border-box">
+
+<span style="font-family: 'Noto Sans SC', sans-serif; font-size: 18px; color: #C9C2B6; padding: 8px 4px 0">设置菜单</span>
+<div style="width: 960px; height: 264px; overflow: hidden">
+<div style="position: relative; width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: {{bg}}; overflow: hidden">
+  <div style="position: absolute; left: 151px; top: 6px; width: 178px; height: 34px; box-sizing: border-box; border: 2px solid #1A1410; border-radius: 3px; background: {{card}}; display: flex; align-items: center; justify-content: center">
+    <span style="font-size: 15px; color: #1A1410; letter-spacing: 3px">纯解码器</span>
+  </div>
+  <div style="position: absolute; left: 4px; top: 45px; width: 465px; height: 4px; background: repeating-linear-gradient(90deg, #1A1410 0 1px, transparent 1px 8px) 0 0 / 80% 3px no-repeat, repeating-linear-gradient(90deg, {{red}} 0 1px, transparent 1px 8px) 100% 0 / 20% 3px no-repeat, linear-gradient(90deg, #1A1410 80%, {{red}} 80%) 0 3px / 100% 1px no-repeat"></div>
+  <div style="position: absolute; left: 49px; top: 63px; width: 382px; height: 55px; box-sizing: border-box; border: 2px solid #1A1410; border-radius: 3px; background: {{card}}"></div>
+  <span style="position: absolute; left: 0; top: 66px; width: 480px; text-align: center; font-size: 12px; line-height: 18px; color: {{main}}">背景菜单</span>
+  <div style="position: absolute; left: 176px; top: 86px; width: 127px; height: 36px; box-sizing: border-box; border: 1px solid #1A1410; border-radius: 2px; background: {{red}}; display: flex; align-items: center; justify-content: center">
+    <span style="font-size: 12px; color: #FFFFFF; letter-spacing: 1px">屏幕亮度</span>
+  </div>
+</div>
+</div>
+
+<span style="font-family: 'Noto Sans SC', sans-serif; font-size: 18px; color: #C9C2B6; padding: 8px 4px 0">语言弹窗</span>
+<div style="width: 960px; height: 264px; overflow: hidden">
+<div style="position: relative; width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: {{bg}}; overflow: hidden">
+  <div style="position: absolute; left: 112px; top: 26px; width: 256px; height: 80px; box-sizing: border-box; border: 2px solid #1A1410; border-radius: 3px; background: {{card}}"></div>
+  <div style="position: absolute; left: 240px; top: 40px; width: 1px; height: 52px; background: #C99A5E"></div>
+  <span style="position: absolute; left: 150px; top: 56px; width: 70px; text-align: center; font-size: 15px; line-height: 20px; color: {{sub}}">语言</span>
+  <span style="position: absolute; left: 250px; top: 58px; width: 70px; text-align: center; font-size: 13px; line-height: 20px; color: {{sub}}">English</span>
+</div>
+</div>
+
+<span style="font-family: 'Noto Sans SC', sans-serif; font-size: 18px; color: #C9C2B6; padding: 8px 4px 0">顶部刻度图和指针（固件里有这两张图，什么时候显示还没确认）</span>
+<div style="width: 960px; height: 264px; overflow: hidden">
+<div style="position: relative; width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: {{bg}}; overflow: hidden">
+  <div style="position: absolute; left: 3px; top: 4px; width: 474px; height: 39px">
+    <div style="position: absolute; left: 6px; top: 2px; width: 365px; height: 10px; background: repeating-linear-gradient(90deg, #1A1410 0 1px, transparent 1px 7.3px)"></div>
+    <div style="position: absolute; left: 6px; top: 2px; width: 365px; height: 16px; background: repeating-linear-gradient(90deg, #1A1410 0 1.5px, transparent 1.5px 36.5px)"></div>
+    <div style="position: absolute; left: 371px; top: 2px; width: 92px; height: 10px; background: repeating-linear-gradient(90deg, {{red}} 0 1px, transparent 1px 7.3px)"></div>
+    <div style="position: absolute; left: 371px; top: 2px; width: 92px; height: 16px; background: repeating-linear-gradient(90deg, {{red}} 0 1.5px, transparent 1.5px 36.5px)"></div>
+    <div style="position: absolute; left: 6px; top: 1px; width: 458px; height: 1.5px; background: linear-gradient(90deg, #1A1410 79.6%, {{red}} 79.6%)"></div>
+    <div style="position: absolute; left: 0; top: 20px; width: 474px; display: flex; justify-content: space-between; padding: 0 0 0 2px; box-sizing: border-box; font-size: 11px; line-height: 14px">
+      <span style="color: #1A1410">0</span><span style="color: #1A1410">10</span><span style="color: #1A1410">20</span><span style="color: #1A1410">30</span><span style="color: #1A1410">40</span><span style="color: #1A1410">50</span><span style="color: #1A1410">60</span><span style="color: #1A1410">70</span><span style="color: #1A1410">80</span><span style="color: {{red}}">90</span><span style="color: {{red}}">100</span>
+    </div>
+  </div>
+  <div style="position: absolute; left: 229px; top: 10px; width: 15px; height: 55px; display: flex; flex-direction: column; align-items: center">
+    <div style="width: 2px; height: 46px; background: #1A1410"></div>
+    <div style="width: 7px; height: 7px; border-radius: 4px; background: #1A1410"></div>
+  </div>
+  <div style="position: absolute; left: 4px; top: 45px; width: 465px; height: 4px; background: repeating-linear-gradient(90deg, #1A1410 0 1px, transparent 1px 8px) 0 0 / 80% 3px no-repeat, repeating-linear-gradient(90deg, {{red}} 0 1px, transparent 1px 8px) 100% 0 / 20% 3px no-repeat, linear-gradient(90deg, #1A1410 80%, {{red}} 80%) 0 3px / 100% 1px no-repeat"></div>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"bg":{"editor":"color","default":"#F2C38A","options":["#F2C38A","#F6D3A6","#EFB27C"]},"card":{"editor":"color","default":"#FBE4C2","options":["#FBE4C2","#FFF1DC"]},"red":{"editor":"color","default":"#C42A1C","options":["#C42A1C","#D9401F","#9E2016"]},"main":{"editor":"color","default":"#1A1410","options":["#1A1410","#C42A1C"]},"sub":{"editor":"color","default":"#7A4A22","options":["#7A4A22","#5A3A1E","#1A1410"]},"$preview":{"width":960,"height":900}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+  bg: this.props.bg ?? '#F2C38A', card: this.props.card ?? '#FBE4C2', red: this.props.red ?? '#C42A1C',
+  main: this.props.main ?? '#1A1410', sub: this.props.sub ?? '#7A4A22'
+};
+}
+}
+</script>
+</body>
+</html>

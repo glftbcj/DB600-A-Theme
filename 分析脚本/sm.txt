@@ -1,0 +1,741 @@
+8017b02  cbz     r0, #0x8017b0c               
+8017b04  mov.w   r8, #1                       
+8017b08  b       #0x8017b0e                   
+8017b0a  b       #0x8017b5a                   
+8017b0c  mov     r8, r7                       
+8017b0e  str.w   fp, [sp, #0x60]              
+8017b12  cmp.w   sl, #0                       
+8017b16  ble     #0x8017b5a                   
+8017b18  ldrh.w  r0, [sp, #0x18]              
+8017b1c  strh.w  r0, [sp]                     
+8017b20  ldrh.w  r0, [sp, #0x1c]              
+8017b24  strh.w  r0, [sp, #4]                 
+8017b28  movs    r0, #2                       
+8017b2a  strb.w  r0, [sp, #0x64]              
+8017b2e  ldrsh.w r4, [sp, #0x1e]              
+8017b32  b       #0x8017b52                   
+8017b34  strh.w  r4, [sp, #2]                 
+8017b38  strh.w  r4, [sp, #6]                 
+8017b3c  cmp.w   r8, #0                       
+8017b40  beq     #0x8017ba2                   
+8017b42  str     r6, [sp, #0x60]              
+8017b44  add     r1, sp, #0x54                
+8017b46  ldr     r0, [sp, #0xa8]              
+8017b48  bl      #0x801daf8                   
+8017b4c  subs    r4, r4, #1                   
+8017b4e  add     r6, r5                       
+8017b50  sxth    r4, r4                       
+8017b52  ldrsh.w r0, [sp, #0x1a]              
+8017b56  cmp     r0, r4                       
+8017b58  ble     #0x8017b34                   
+8017b5a  ldrh.w  r0, [sp, #0x4c]              
+8017b5e  mov     r1, sp                       
+8017b60  add     r0, r5                       
+8017b62  strh.w  r0, [sp]                     
+8017b66  ldrh.w  r0, [sp, #0x50]              
+8017b6a  subs    r0, r0, r5                   
+8017b6c  strh.w  r0, [sp, #4]                 
+8017b70  ldrh.w  r0, [sp, #0x4e]              
+8017b74  str.w   fp, [sp, #0x60]              
+8017b78  add     r0, r5                       
+8017b7a  strh.w  r0, [sp, #2]                 
+8017b7e  ldrh.w  r0, [sp, #0x52]              
+8017b82  subs    r0, r0, r5                   
+8017b84  strh.w  r0, [sp, #6]                 
+8017b88  ldr     r0, [sp, #0xa8]              
+8017b8a  ldr     r2, [r0, #8]                 
+8017b8c  add     r0, sp, #0x18                
+8017b8e  bl      #0x80107f0                   
+8017b92  cbz     r0, #0x8017c10               
+8017b94  mov     r2, sb                       
+8017b96  add     r1, sp, #0x74                
+8017b98  add     r0, sp, #0x18                
+8017b9a  bl      #0x8010840                   
+8017b9e  cbz     r0, #0x8017bca               
+8017ba0  b       #0x8017c26                   
+8017ba2  mov     r2, r5                       
+8017ba4  mov     r1, r6                       
+8017ba6  mov     r0, fp                       
+8017ba8  bl      #0x80212c4                   
+8017bac  ldrsh.w r1, [sp, #0x18]              
+8017bb0  mov     r3, sl                       
+8017bb2  mov     r2, r4                       
+8017bb4  mov     r0, fp                       
+8017bb6  bl      #0x801d02c                   
+8017bba  strb.w  r0, [sp, #0x64]              
+8017bbe  cmp     r0, #1                       
+8017bc0  bne     #0x8017b44                   
+8017bc2  movs    r0, #2                       
+8017bc4  strb.w  r0, [sp, #0x64]              
+8017bc8  b       #0x8017b44                   
+8017bca  ldrsh.w r1, [sp, #0x1c]              
+8017bce  ldrsh.w r0, [sp, #0x18]              
+8017bd2  subs    r2, r1, r0                   
+8017bd4  adds    r2, r2, #1                   
+8017bd6  sxth    r5, r2                       
+8017bd8  cmp     r5, #0                       
+8017bda  ble     #0x8017c26                   
+8017bdc  strh.w  r1, [sp, #4]                 
+8017be0  strh.w  r0, [sp]                     
+8017be4  ldrsh.w r4, [sp, #0x1a]              
+8017be8  b       #0x8017c1e                   
+8017bea  nop                                  
+8017bec  strh.w  r4, [sp, #2]                 
+8017bf0  strh.w  r4, [sp, #6]                 
+8017bf4  mov     r1, r5                       
+8017bf6  mov     r0, fp                       
+8017bf8  bl      #0x80214c4                   
+8017bfc  ldrsh.w r1, [sp, #0x18]              
+8017c00  mov     r3, r5                       
+8017c02  mov     r2, r4                       
+8017c04  mov     r0, fp                       
+8017c06  bl      #0x801d02c                   
+8017c0a  strb.w  r0, [sp, #0x64]              
+8017c0e  b       #0x8017c12                   
+8017c10  b       #0x8017c26                   
+8017c12  add     r1, sp, #0x54                
+8017c14  ldr     r0, [sp, #0xa8]              
+8017c16  bl      #0x801daf8                   
+8017c1a  adds    r4, r4, #1                   
+8017c1c  sxth    r4, r4                       
+8017c1e  ldrsh.w r0, [sp, #0x1e]              
+8017c22  cmp     r0, r4                       
+8017c24  bge     #0x8017bec                   
+8017c26  cbnz    r7, #0x8017c34               
+8017c28  add     r0, sp, #0x80                
+8017c2a  bl      #0x801d070                   
+8017c2e  ldr     r0, [sp, #0x98]              
+8017c30  bl      #0x801d6d8                   
+8017c34  ldr     r0, [sp, #0x40]              
+8017c36  bl      #0x80211c8                   
+8017c3a  mov     r0, fp                       
+8017c3c  bl      #0x80211c8                   
+8017c40  add     sp, #0xb4                    
+8017c42  pop.w   {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+8017c46  push    {r4, r5, r6, lr}             
+8017c48  mov     r4, r0                       
+8017c4a  bl      #0x8020324                   
+8017c4e  cbz     r0, #0x8017c64               
+8017c50  ldr     r0, [r0]                     
+8017c52  ldr     r2, [r0, #8]                 
+8017c54  cbz     r2, #0x8017c5a               
+8017c56  ldrb    r1, [r4, #8]                 
+8017c58  blx     r2                           
+8017c5a  ldrb    r0, [r4, #0x18]              
+8017c5c  lsls    r1, r0, #0x1e                
+8017c5e  bmi     #0x8017ce8                   
+8017c60  lsls    r0, r0, #0x1f                
+8017c62  bne     #0x8017d5e                   
+8017c64  movs    r6, #1                       
+8017c66  movs    r1, #0                       
+8017c68  ldr     r0, [r4, #4]                 
+8017c6a  bl      #0x80226b4                   
+8017c6e  movs    r5, #0                       
+8017c70  b       #0x8017ca8                   
+8017c72  ldr     r1, [r0]                     
+8017c74  cbz     r1, #0x8017c9e               
+8017c76  ldrb    r1, [r0, #8]                 
+8017c78  lsrs    r2, r1, #7                   
+8017c7a  beq     #0x8017c9e                   
+8017c7c  cmp     r1, #0x80                    
+8017c7e  beq     #0x8017c8a                   
+8017c80  ldrb    r2, [r4, #8]                 
+8017c82  bic     r1, r1, #0x80                
+8017c86  cmp     r1, r2                       
+8017c88  bne     #0x8017c9e                   
+8017c8a  ldr     r1, [r0, #4]                 
+8017c8c  str     r1, [r4, #0xc]               
+8017c8e  ldr     r1, [r0]                     
+8017c90  mov     r0, r4                       
+8017c92  blx     r1                           
+8017c94  ldrb    r0, [r4, #0x18]              
+8017c96  lsls    r1, r0, #0x1e                
+8017c98  bmi     #0x8017ce8                   
+8017c9a  lsls    r0, r0, #0x1f                
+8017c9c  bne     #0x8017d5e                   
+8017c9e  adds    r5, r5, #1                   
+8017ca0  mov     r1, r5                       
+8017ca2  ldr     r0, [r4, #4]                 
+8017ca4  bl      #0x80226b4                   
+8017ca8  cbz     r0, #0x8017cae               
+8017caa  cmp     r6, #0                       
+8017cac  bne     #0x8017c72                   
+8017cae  mov     r1, r4                       
+8017cb0  movs    r0, #0                       
+8017cb2  bl      #0x802250e                   
+8017cb6  movs    r5, r0                       
+8017cb8  beq     #0x8017d62                   
+8017cba  movs    r1, #0                       
+8017cbc  ldr     r0, [r4, #4]                 
+8017cbe  bl      #0x80226b4                   
+8017cc2  movs    r6, #0                       
+8017cc4  b       #0x8017cfa                   
+8017cc6  ldr     r1, [r0]                     
+8017cc8  cbz     r1, #0x8017cf0               
+8017cca  ldrb    r1, [r0, #8]                 
+8017ccc  lsls    r2, r1, #0x18                
+8017cce  bmi     #0x8017cf0                   
+8017cd0  cbz     r1, #0x8017cd8               
+8017cd2  ldrb    r2, [r4, #8]                 
+8017cd4  cmp     r1, r2                       
+8017cd6  bne     #0x8017cf0                   
+8017cd8  ldr     r1, [r0, #4]                 
+8017cda  str     r1, [r4, #0xc]               
+8017cdc  ldr     r1, [r0]                     
+8017cde  mov     r0, r4                       
+8017ce0  blx     r1                           
+8017ce2  ldrb    r0, [r4, #0x18]              
+8017ce4  lsls    r1, r0, #0x1e                
+8017ce6  bpl     #0x8017cec                   
+8017ce8  movs    r0, #1                       
+8017cea  pop     {r4, r5, r6, pc}             
+8017cec  lsls    r0, r0, #0x1f                
+8017cee  bne     #0x8017d5e                   
+8017cf0  adds    r6, r6, #1                   
+8017cf2  mov     r1, r6                       
+8017cf4  ldr     r0, [r4, #4]                 
+8017cf6  bl      #0x80226b4                   
+8017cfa  cbz     r0, #0x8017d02               
+8017cfc  cmp     r5, #1                       
+8017cfe  beq     #0x8017cc6                   
+8017d00  b       #0x8017d62                   
+8017d02  cmp     r5, #1                       
+8017d04  bne     #0x8017d62                   
+8017d06  ldr     r0, [r4, #4]                 
+8017d08  ldr     r1, [r0, #4]                 
+8017d0a  cbz     r1, #0x8017d62               
+8017d0c  ldrb    r1, [r4, #0x18]              
+8017d0e  lsls    r1, r1, #0x1d                
+8017d10  bmi     #0x8017d62                   
+8017d12  ldrb    r1, [r4, #8]                 
+8017d14  cmp     r1, #0x23                    
+8017d16  beq     #0x8017d4c                   
+8017d18  cmp     r1, #0x24                    
+8017d1a  beq     #0x8017d4c                   
+8017d1c  lsls    r1, r5, #0xe                 
+8017d1e  bl      #0x80236fa                   
+8017d22  cbz     r0, #0x8017d62               
+8017d24  ldrb    r0, [r4, #8]                 
+8017d26  subs    r0, #0x11                    
+8017d28  cmp     r0, #0x1c                    
+8017d2a  bhs     #0x8017d4c                   
+8017d2c  tbb     [pc, r0]                     
+8017d30  adds    r1, r3, r4                   
+8017d32  adds    r1, r3, r4                   
+8017d34  adds    r1, r3, r4                   
+8017d36  adds    r1, r3, r4                   
+8017d38  adds    r1, r3, r4                   
+8017d3a  lsrs    r1, r3, #0x18                
+8017d3c  adds    r6, r1, r4                   
+8017d3e  lsrs    r6, r1, #0x18                
+8017d40  adds    r1, r3, r4                   
+8017d42  adds    r1, r3, r4                   
+8017d44  lsrs    r6, r1, #0x18                
+8017d46  lsrs    r6, r1, #0x18                
+8017d48  adds    r1, r3, r4                   
+8017d4a  adds    r6, r1, r4                   
+8017d4c  ldr     r0, [r4, #4]                 
+8017d4e  ldr     r0, [r0, #4]                 
+8017d50  str     r0, [r4, #4]                 
+8017d52  mov     r0, r4                       
+8017d54  bl      #0x8017c46                   
+8017d58  mov     r5, r0                       
+8017d5a  cmp     r0, #1                       
+8017d5c  beq     #0x8017d62                   
+8017d5e  movs    r0, #0                       
+8017d60  pop     {r4, r5, r6, pc}             
+8017d62  mov     r0, r5                       
+8017d64  pop     {r4, r5, r6, pc}             
+8017d66  movs    r0, r0                       
+8017d68  push.w  {r4, r5, r6, r7, r8, sb, sl, fp, ip, lr} 
+8017d6c  movs    r0, #0                       
+8017d6e  bl      #0x800b030                   ;update_main
+8017d72  ldr     r6, [pc, #0x148]             ;ram:20000070
+8017d74  ldr     r4, [pc, #0x148]             ;ram:20000066
+8017d76  ldr.w   r8, [pc, #0x14c]             ;ram:20000067
+8017d7a  ldrb    r0, [r6]                     ;ram:20000070
+8017d7c  ldr     r7, [pc, #0x148]             ;ram:20000009
+8017d7e  ldr.w   sl, [pc, #0x14c]             ;ram:20000248
+8017d82  ldr.w   fp, [pc, #0x14c]             ;ram:200001e0
+8017d86  ldr     r5, [pc, #0x14c]             ;ram:20000061
+8017d88  ldr.w   sb, [pc, #0x14c]             ;ram:20000071
+8017d8c  cbnz    r0, #0x8017d98               
+8017d8e  b       #0x8017e98                   
+8017d90  subs    r0, r0, #1                   
+8017d92  strb    r0, [r4]                     ;ram:20000066
+8017d94  bl      #0x801005c                   
+8017d98  ldrb    r0, [r4]                     ;ram:20000066
+8017d9a  cmp     r0, #0                       
+8017d9c  bne     #0x8017d90                   
+8017d9e  mov     r4, r8                       
+8017da0  ldrb    r0, [r4]                     
+8017da2  cbz     r0, #0x8017dae               
+8017da4  subs    r0, r0, #1                   
+8017da6  strb    r0, [r4]                     
+8017da8  bl      #0x8010018                   
+8017dac  b       #0x8017da0                   
+8017dae  ldr.w   r8, [pc, #0x12c]             ;ram:2000006e
+8017db2  movs    r0, #1                       
+8017db4  ldr     r1, [pc, #0x128]             ;ram:20000063
+8017db6  ldrh.w  ip, [r8]                     ;ram:2000006e
+8017dba  movs    r3, #0                       
+8017dbc  ldr     r4, [pc, #0x124]             ;ram:200002a0
+8017dbe  cmp.w   ip, #0                       
+8017dc2  beq     #0x8017de6                   
+8017dc4  ldrb    r2, [r5]                     ;ram:20000061
+8017dc6  cmp     r2, #4                       
+8017dc8  beq     #0x8017dda                   
+8017dca  cmp     r2, #8                       
+8017dcc  beq     #0x8017dda                   
+8017dce  cmp.w   ip, #5                       
+8017dd2  bls     #0x8017de6                   
+8017dd4  cmp     r2, #9                       
+8017dd6  beq     #0x8017de2                   
+8017dd8  b       #0x8017de6                   
+8017dda  strh.w  r3, [r8]                     ;ram:2000006e
+8017dde  strb    r0, [r1]                     ;ram:20000063
+8017de0  b       #0x8017dea                   
+8017de2  strb    r0, [r7]                     ;ram:20000009
+8017de4  strb    r3, [r6]                     ;ram:20000070
+8017de6  ldrb    r2, [r1]                     ;ram:20000063
+8017de8  cbz     r2, #0x8017e32               
+8017dea  ldrb    r2, [r6]                     ;ram:20000070
+8017dec  cbz     r2, #0x8017e32               
+8017dee  strb    r3, [r1]                     ;ram:20000063
+8017df0  ldrb    r1, [r5]                     ;ram:20000061
+8017df2  subs    r1, r1, #2                   
+8017df4  cmp     r1, #0xe                     
+8017df6  bhs     #0x8017e70                   
+8017df8  tbb     [pc, r1]                     
+8017dfc  lsrs    r7, r0, #4                   
+8017dfe  subs    r2, #0xe                     
+8017e00  subs    r2, #0x3a                    
+8017e02  subs    r2, #0x1c                    
+8017e04  subs    r1, r2, #4                   
+8017e06  adds    r1, #0x22                    
+8017e08  asrs    r7, r6, #4                   
+8017e0a  strb    r0, [r7]                     
+8017e0c  b       #0x8017e70                   
+8017e0e  ldr     r1, [pc, #0xd8]              ;ram:20000001
+8017e10  ldrb    r2, [r1]                     ;ram:20000001
+8017e12  bics    r0, r2                       
+8017e14  strb    r0, [r1]                     ;ram:20000001
+8017e16  b       #0x8017e70                   
+8017e18  bl      #0x8010018                   
+8017e1c  b       #0x8017e70                   
+8017e1e  ldr.w   r0, [sl]                     ;ram:20000248
+8017e22  bl      #0x8021cac                   
+8017e26  ldr.w   r0, [fp, #0x24]              ;ram:20000204
+8017e2a  bl      #0x80266c4                   
+8017e2e  bl      #0x800e764                   ;build_menu
+8017e32  b       #0x8017e70                   
+8017e34  bl      #0x801005c                   
+8017e38  b       #0x8017e70                   
+8017e3a  bl      #0x800be1c                   
+8017e3e  b       #0x8017e70                   
+8017e40  ldr     r1, [pc, #0xa8]              ;ram:20000038
+8017e42  movs    r0, #2                       
+8017e44  strb    r0, [r1]                     ;ram:20000038
+8017e46  ldr     r0, [pc, #0xa8]              ;ram:20000039
+8017e48  strb    r3, [r0]                     ;ram:20000039
+8017e4a  ldr     r0, [pc, #0xa8]              ;ram:200000a8
+8017e4c  ldrb    r1, [r0]                     ;ram:200000a8
+8017e4e  orr     r1, r1, #0x40                
+8017e52  strb    r1, [r0]                     ;ram:200000a8
+8017e54  ldr     r1, [pc, #0xa0]              ;ram:20000028
+8017e56  mov.w   r0, #0x15e                   
+8017e5a  strh    r0, [r1]                     ;ram:20000028
+8017e5c  b       #0x8017e70                   
+8017e5e  ldrb    r0, [r4, #0xa]               ;ram:200002aa
+8017e60  adds    r0, r0, #1                   
+8017e62  and     r0, r0, #3                   
+8017e66  strh    r0, [r4, #0xa]               ;ram:200002aa
+8017e68  b       #0x8017e70                   
+8017e6a  ldrh    r1, [r4, #0x1c]              ;ram:200002bc
+8017e6c  bics    r0, r1                       
+8017e6e  strh    r0, [r4, #0x1c]              ;ram:200002bc
+8017e70  ldrb.w  r1, [sb]                     ;ram:20000071
+8017e74  ldrb    r0, [r5]                     ;ram:20000061
+8017e76  cmp     r1, r0                       
+8017e78  beq     #0x8017e98                   
+8017e7a  cbnz    r0, #0x8017e98               
+8017e7c  ldrb    r0, [r6]                     ;ram:20000070
+8017e7e  cbz     r0, #0x8017e98               
+8017e80  cmp     r1, #9                       
+8017e82  bne     #0x8017e98                   
+8017e84  ldrh    r0, [r4, #2]                 ;ram:200002a2
+8017e86  movs    r1, #6                       
+8017e88  adds    r0, r0, #1                   
+8017e8a  udiv    r2, r0, r1                   
+8017e8e  mls     r0, r1, r2, r0               
+8017e92  strh    r0, [r4, #2]                 ;ram:200002a2
+8017e94  bl      #0x800bdf4                   
+8017e98  ldrb    r1, [r5]                     ;ram:20000061
+8017e9a  strb.w  r1, [sb]                     ;ram:20000071
+8017e9e  ldrb    r0, [r7]                     
+8017ea0  cmp     r0, #0                       
+8017ea2  beq     #0x8017eb8                   
+8017ea4  ldr.w   r0, [sl]                     ;ram:20000248
+8017ea8  bl      #0x8021cac                   
+8017eac  ldr.w   r0, [fp, #0x24]              ;ram:20000204
+8017eb0  pop.w   {r4, r5, r6, r7, r8, sb, sl, fp, ip, lr} 
+8017eb4  b.w     #0x80266c4                   
+8017eb8  pop.w   {r4, r5, r6, r7, r8, sb, sl, fp, ip, pc} 
+8017ebc  lsls    r0, r6, #1                   
+8017ebe  movs    r0, #0                       
+8017ec0  lsls    r6, r4, #1                   
+8017ec2  movs    r0, #0                       
+8017ec4  lsls    r7, r4, #1                   
+8017ec6  movs    r0, #0                       
+8017ec8  movs    r1, r1                       
+8017eca  movs    r0, #0                       
+8017ecc  lsls    r0, r1, #9                   
+8017ece  movs    r0, #0                       
+8017ed0  lsls    r0, r4, #7                   
+8017ed2  movs    r0, #0                       
+8017ed4  lsls    r1, r4, #1                   
+8017ed6  movs    r0, #0                       
+8017ed8  lsls    r1, r6, #1                   
+8017eda  movs    r0, #0                       
+8017edc  lsls    r6, r5, #1                   
+8017ede  movs    r0, #0                       
+8017ee0  lsls    r3, r4, #1                   
+8017ee2  movs    r0, #0                       
+8017ee4  lsls    r0, r4, #0xa                 
+8017ee6  movs    r0, #0                       
+8017ee8  movs    r1, r0                       
+8017eea  movs    r0, #0                       
+8017eec  movs    r0, r7                       
+8017eee  movs    r0, #0                       
+8017ef0  movs    r1, r7                       
+8017ef2  movs    r0, #0                       
+8017ef4  lsls    r0, r5, #2                   
+8017ef6  movs    r0, #0                       
+8017ef8  movs    r0, r5                       
+8017efa  movs    r0, #0                       
+8017efc  push    {r4, lr}                     
+8017efe  ldr     r4, [pc, #0x20]              ;ram:20000208
+8017f00  ldr     r0, [r4, #4]                 ;ram:2000020c
+8017f02  bl      #0x80266c4                   
+8017f06  ldr     r0, [r4, #8]                 ;ram:20000210
+8017f08  bl      #0x80266c4                   
+8017f0c  ldr     r0, [pc, #0x14]              ;ram:20000248
+8017f0e  ldr     r0, [r0]                     ;ram:20000248
+8017f10  bl      #0x8021cac                   
+8017f14  bl      #0x800c14c                   ;build_main
+8017f18  ldr     r1, [pc, #0xc]               ;ram:20000008
+8017f1a  movs    r0, #0                       
+8017f1c  strb    r0, [r1]                     ;ram:20000008
+8017f1e  pop     {r4, pc}                     
+8017f20  lsls    r0, r1, #8                   
+8017f22  movs    r0, #0                       
+8017f24  lsls    r0, r1, #9                   
+8017f26  movs    r0, #0                       
+8017f28  movs    r0, r1                       
+8017f2a  movs    r0, #0                       
+8017f2c  push.w  {r4, r5, r6, r7, r8, lr}     
+8017f30  movs    r0, #0                       
+8017f32  bl      #0x800b7a8                   
+8017f36  ldr     r0, [pc, #0x1b4]             ;ram:20000070
+8017f38  ldr     r7, [pc, #0x1b4]             ;ram:20000248
+8017f3a  ldr     r4, [pc, #0x1b8]             ;ram:20000218
+8017f3c  ldrb    r0, [r0]                     ;ram:20000070
+8017f3e  cmp     r0, #0                       
+8017f40  beq     #0x801802a                   
+8017f42  ldr     r3, [pc, #0x1b4]             ;ram:2000006e
+8017f44  ldr     r0, [pc, #0x1b4]             ;ram:20000061
+8017f46  ldr     r2, [pc, #0x1b8]             ;ram:20000063
+8017f48  ldrh.w  ip, [r3]                     ;ram:2000006e
+8017f4c  movs    r1, #1                       
+8017f4e  movs    r5, #0                       
+8017f50  ldr     r6, [pc, #0x1b0]             ;ram:20000066
+8017f52  ldr.w   r8, [pc, #0x1b4]             ;ram:20000067
+8017f56  cmp.w   ip, #0                       
+8017f5a  beq     #0x8017f6c                   
+8017f5c  ldrb.w  ip, [r0]                     ;ram:20000061
+8017f60  cmp.w   ip, #5                       
+8017f64  beq     #0x8017f88                   
+8017f66  cmp.w   ip, #7                       
+8017f6a  beq     #0x8017f88                   
+8017f6c  ldrb    r3, [r2]                     ;ram:20000063
+8017f6e  cmp     r3, #0                       
+8017f70  beq     #0x8017fd2                   
+8017f72  strb    r5, [r2]                     ;ram:20000063
+8017f74  ldrb    r0, [r0]                     ;ram:20000061
+8017f76  cmp     r0, #5                       
+8017f78  beq     #0x8018066                   
+8017f7a  cmp     r0, #6                       
+8017f7c  beq     #0x8017f8e                   
+8017f7e  cmp     r0, #7                       
+8017f80  beq     #0x801806e                   
+8017f82  cmp     r0, #0xf                     
+8017f84  bne     #0x8018078                   
+8017f86  b       #0x8017f8e                   
+8017f88  strh    r5, [r3]                     
+8017f8a  strb    r1, [r2]                     ;ram:20000063
+8017f8c  b       #0x8017f72                   
+8017f8e  ldrb    r2, [r4, #2]                 ;ram:2000021a
+8017f90  ldr     r0, [pc, #0x178]             ;ram:200002a0
+8017f92  cbz     r2, #0x8017fa8               
+8017f94  strb    r5, [r4, #2]                 ;ram:2000021a
+8017f96  ldrsb.w r1, [r4, #1]                 ;ram:20000219
+8017f9a  cmp     r1, #5                       
+8017f9c  bhs     #0x8018078                   
+8017f9e  tbb     [pc, r1]                     
+8017fa2  adds    r3, #0x2f                    
+8017fa4  cmp     r7, r6                       
+8017fa6  lsls    r1, r1, #1                   
+8017fa8  ldrsb.w r2, [r4, #1]                 ;ram:20000219
+8017fac  cmp     r2, #5                       
+8017fae  beq     #0x8017fc2                   
+8017fb0  movs    r3, #3                       
+8017fb2  strb    r1, [r4, #2]                 ;ram:2000021a
+8017fb4  cmp     r2, #5                       
+8017fb6  bhs     #0x8017ff8                   
+8017fb8  tbb     [pc, r2]                     
+8017fbc  lsrs    r4, r1, #0x18                
+8017fbe  asrs    r3, r2, #0x14                
+8017fc0  movs    r2, r3                       
+8017fc2  ldr     r0, [r7]                     ;ram:20000248
+8017fc4  bl      #0x8021cac                   
+8017fc8  ldr     r0, [r4, #0x18]              
+8017fca  bl      #0x80266c4                   
+8017fce  bl      #0x800c14c                   ;build_main
+8017fd2  b       #0x8018078                   
+8017fd4  ldrb    r0, [r0, #0xa]               
+8017fd6  b       #0x8017fda                   
+8017fd8  ldrb    r0, [r0, #0xc]               
+8017fda  strb    r0, [r4, #3]                 
+8017fdc  strb    r5, [r4, #4]                 
+8017fde  strb    r3, [r4, #5]                 
+8017fe0  b       #0x8018078                   
+8017fe2  strb    r1, [r4, #3]                 
+8017fe4  b       #0x8017fea                   
+8017fe6  ldrb    r0, [r0, #0x1c]              
+8017fe8  b       #0x8017ff4                   
+8017fea  strb    r5, [r4, #4]                 
+8017fec  strb    r1, [r4, #5]                 
+8017fee  b       #0x8018078                   
+8017ff0  ldrb.w  r0, [r0, #0x24]              
+8017ff4  strb    r0, [r4, #3]                 
+8017ff6  b       #0x8017fea                   
+8017ff8  strb    r5, [r4, #3]                 
+8017ffa  strb    r5, [r4, #4]                 
+8017ffc  strb    r5, [r4, #5]                 
+8017ffe  b       #0x8018078                   
+8018000  ldrsb.w r1, [r4, #3]                 
+8018004  strh    r1, [r0, #0xa]               
+8018006  b       #0x8018078                   
+8018008  ldrsb.w r1, [r4, #3]                 
+801800c  strh    r1, [r0, #0xc]               
+801800e  b       #0x8018078                   
+8018010  ldrb    r0, [r4, #3]                 
+8018012  cbnz    r0, #0x8018064               
+8018014  bl      #0x800f058                   
+8018018  ldr     r0, [r7]                     ;ram:20000248
+801801a  bl      #0x8021cac                   
+801801e  ldr     r0, [r4, #0x18]              
+8018020  bl      #0x80266c4                   
+8018024  bl      #0x800e3a0                   ;build_lang
+8018028  b       #0x8018078                   
+801802a  b       #0x80180ca                   
+801802c  ldrsb.w r1, [r4, #3]                 
+8018030  strh    r1, [r0, #0x1c]              
+8018032  b       #0x8018078                   
+8018034  ldrh    r2, [r0, #0x24]              
+8018036  ldrsb.w r1, [r4, #3]                 
+801803a  cmp     r2, r1                       
+801803c  beq     #0x8018078                   
+801803e  lsls    r1, r1, #0x10                
+8018040  lsrs    r1, r1, #0x10                
+8018042  strh    r1, [r0, #0x24]              
+8018044  beq     #0x801804a                   
+8018046  movs    r0, #1                       
+8018048  b       #0x801804c                   
+801804a  movs    r0, #0                       
+801804c  ldr     r1, [pc, #0xc0]              ;0xefd961
+801804e  muls    r0, r1, r0                   
+8018050  bl      #0x801bcba                   ;color_hex
+8018054  mov     r1, r0                       
+8018056  movs    r2, #0                       
+8018058  ldr     r0, [r7]                     ;ram:20000248
+801805a  bl      #0x8024d7c                   ;set_bg_color
+801805e  b       #0x8017fc2                   
+8018060  b       #0x8018066                   
+8018062  b       #0x801806e                   
+8018064  b       #0x8018078                   
+8018066  ldrb    r0, [r6]                     ;ram:20000066
+8018068  adds    r0, r0, #1                   
+801806a  strb    r0, [r6]                     ;ram:20000066
+801806c  b       #0x8018078                   
+801806e  ldrb.w  r1, [r8]                     ;ram:20000067
+8018072  adds    r1, r1, #1                   
+8018074  strb.w  r1, [r8]                     ;ram:20000067
+8018078  ldrsb.w r0, [r4, #2]                 
+801807c  ldrsb.w r2, [r4, #4]                 
+8018080  ldrb    r1, [r6]                     ;ram:20000066
+8018082  cbz     r1, #0x80180a0               
+8018084  strb    r5, [r6]                     ;ram:20000066
+8018086  cbz     r0, #0x8018096               
+8018088  ldrsb.w r1, [r4, #3]                 
+801808c  cmp     r1, r2                       
+801808e  ble     #0x80180a0                   
+8018090  subs    r1, r1, #1                   
+8018092  strb    r1, [r4, #3]                 
+8018094  b       #0x80180a0                   
+8018096  ldrsb.w r1, [r4, #1]                 
+801809a  cbz     r1, #0x80180a0               
+801809c  subs    r1, r1, #1                   
+801809e  strb    r1, [r4, #1]                 
+80180a0  ldrsb.w r2, [r4, #5]                 
+80180a4  ldrb.w  r3, [r8]                     ;ram:20000067
+80180a8  cbz     r3, #0x80180ca               
+80180aa  strb.w  r5, [r8]                     ;ram:20000067
+80180ae  cbz     r0, #0x80180be               
+80180b0  ldrsb.w r0, [r4, #3]                 
+80180b4  cmp     r0, r2                       
+80180b6  bge     #0x80180ca                   
+80180b8  adds    r0, r0, #1                   
+80180ba  strb    r0, [r4, #3]                 
+80180bc  b       #0x80180ca                   
+80180be  ldrsb.w r0, [r4, #1]                 
+80180c2  cmp     r0, #5                       
+80180c4  bge     #0x80180ca                   
+80180c6  adds    r0, r0, #1                   
+80180c8  strb    r0, [r4, #1]                 
+80180ca  ldr     r0, [pc, #0x48]              ;ram:2000006c
+80180cc  ldrh    r0, [r0]                     ;ram:2000006c
+80180ce  cmp.w   r0, #0x1f4                   
+80180d2  blo     #0x80180e8                   
+80180d4  ldr     r0, [r7]                     ;ram:20000248
+80180d6  bl      #0x8021cac                   
+80180da  ldr     r0, [r4, #0x18]              
+80180dc  bl      #0x80266c4                   
+80180e0  pop.w   {r4, r5, r6, r7, r8, lr}     
+80180e4  b.w     #0x800c14c                   ;build_main
+80180e8  pop.w   {r4, r5, r6, r7, r8, pc}     
+80180ec  lsls    r0, r6, #1                   
+80180ee  movs    r0, #0                       
+80180f0  lsls    r0, r1, #9                   
+80180f2  movs    r0, #0                       
+80180f4  lsls    r0, r3, #8                   
+80180f6  movs    r0, #0                       
+80180f8  lsls    r6, r5, #1                   
+80180fa  movs    r0, #0                       
+80180fc  lsls    r1, r4, #1                   
+80180fe  movs    r0, #0                       
+8018100  lsls    r3, r4, #1                   
+8018102  movs    r0, #0                       
+8018104  lsls    r6, r4, #1                   
+8018106  movs    r0, #0                       
+8018108  lsls    r7, r4, #1                   
+801810a  movs    r0, #0                       
+801810c  lsls    r0, r4, #0xa                 
+801810e  movs    r0, #0                       
+8018110  bls     #0x80181d6                   
+8018112  lsls    r7, r5, #3                   
+8018114  lsls    r4, r5, #1                   
+8018116  movs    r0, #0                       
+8018118  push    {r4, lr}                     
+801811a  movs    r0, #0                       
+801811c  bl      #0x800babc                   
+8018120  ldr     r0, [pc, #0x4c]              ;ram:20000070
+8018122  ldr     r4, [pc, #0x50]              ;ram:20000061
+8018124  ldrb    r0, [r0]                     ;ram:20000070
+8018126  cbz     r0, #0x8018168               
+8018128  ldr     r2, [pc, #0x4c]              ;ram:20000066
+801812a  ldr     r1, [pc, #0x50]              ;ram:200002a0
+801812c  movs    r0, #0                       
+801812e  ldrb    r3, [r2]                     ;ram:20000066
+8018130  cbz     r3, #0x801813a               
+8018132  strb    r0, [r2]                     ;ram:20000066
+8018134  movs    r2, #1                       
+8018136  strh    r2, [r1, #0x16]              ;ram:200002b6
+8018138  b       #0x8018144                   
+801813a  ldr     r2, [pc, #0x44]              ;ram:20000067
+801813c  ldrb    r3, [r2]                     ;ram:20000067
+801813e  cbz     r3, #0x8018144               
+8018140  strb    r0, [r2]                     ;ram:20000067
+8018142  strh    r0, [r1, #0x16]              ;ram:200002b6
+8018144  ldr     r2, [pc, #0x3c]              ;ram:20000063
+8018146  ldrb    r3, [r2]                     ;ram:20000063
+8018148  cbz     r3, #0x8018168               
+801814a  strb    r0, [r2]                     ;ram:20000063
+801814c  ldrb    r2, [r4]                     ;ram:20000061
+801814e  cmp     r2, #0xf                     
+8018150  bne     #0x8018168                   
+8018152  strh    r0, [r1, #0x22]              ;ram:200002c2
+8018154  ldr     r0, [pc, #0x30]              ;ram:20000248
+8018156  ldr     r0, [r0]                     ;ram:20000248
+8018158  bl      #0x8021cac                   
+801815c  ldr     r0, [pc, #0x2c]              ;ram:2000024c
+801815e  ldr     r0, [r0, #4]                 ;ram:20000250
+8018160  bl      #0x80266c4                   
+8018164  bl      #0x800f144                   ;build_prompt
+8018168  ldr     r1, [pc, #0x24]              ;ram:20000071
+801816a  ldrb    r0, [r4]                     ;ram:20000061
+801816c  strb    r0, [r1]                     ;ram:20000071
+801816e  pop     {r4, pc}                     
+8018170  lsls    r0, r6, #1                   
+8018172  movs    r0, #0                       
+8018174  lsls    r1, r4, #1                   
+8018176  movs    r0, #0                       
+8018178  lsls    r6, r4, #1                   
+801817a  movs    r0, #0                       
+801817c  lsls    r0, r4, #0xa                 
+801817e  movs    r0, #0                       
+8018180  lsls    r7, r4, #1                   
+8018182  movs    r0, #0                       
+8018184  lsls    r3, r4, #1                   
+8018186  movs    r0, #0                       
+8018188  lsls    r0, r1, #9                   
+801818a  movs    r0, #0                       
+801818c  lsls    r4, r1, #9                   
+801818e  movs    r0, #0                       
+8018190  lsls    r1, r6, #1                   
+8018192  movs    r0, #0                       
+8018194  ldr     r0, [pc, #0x20]              ;ram:20000208
+8018196  movs    r2, #5                       
+8018198  ldrsb.w r1, [r0]                     ;ram:20000208
+801819c  adds    r1, r1, #1                   
+801819e  sdiv    r3, r1, r2                   
+80181a2  mls     r1, r2, r3, r1               
+80181a6  sxtb    r1, r1                       
+80181a8  ldr     r2, [pc, #0x10]              ;rom:20354
+80181aa  strb    r1, [r0]                     ;ram:20000208
+80181ac  ldr     r0, [r0, #0xc]               ;ram:20000214
+80181ae  ldr.w   r1, [r2, r1, lsl #2]         
+80181b2  b.w     #0x8020e4c                   ;label_set_text
+80181b6  movs    r0, r0                       
+80181b8  lsls    r0, r1, #8                   
+80181ba  movs    r0, #0                       
+80181bc  adr     r3, #0x150                   ;rom:e310
+80181be  lsrs    r2, r0, #0x20                
+80181c0  push.w  {r0, r1, r2, r3, r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+80181c4  ldrh    r2, [r1, #4]                 
+80181c6  ldrh    r3, [r1]                     
+80181c8  sub     sp, #0x24                    
+80181ca  subs    r2, r2, r3                   
+80181cc  adds    r2, r2, #1                   
+80181ce  sxth    r7, r2                       
+80181d0  ldrh    r2, [r1, #6]                 
+80181d2  ldrh    r1, [r1, #2]                 
+80181d4  mov     r4, r0                       
+80181d6  subs    r1, r2, r1                   
+80181d8  ldrd    fp, r8, [sp, #0x58]          
+80181dc  adds    r1, r1, #1                   
+80181de  ldr     r0, [sp, #0x64]              
+80181e0  sxth.w  sb, r1                       
+80181e4  cmp     r0, #1                       
+80181e6  beq     #0x8018210                   
+80181e8  cmp     r0, #2                       
+80181ea  beq     #0x8018214                   
+80181ec  cmp     r0, #3                       
+80181ee  bne     #0x8018278                   
+80181f0  ldr     r6, [pc, #0x10c]             ;rom:93e7
+80181f2  nop                                  
+80181f4  movs.w  r0, r8                       
+80181f8  beq     #0x8018218                   
+80181fa  movs    r0, #0                       
+80181fc  str     r0, [sp, #0x18]              
+80181fe  ldrh    r0, [r4]                     

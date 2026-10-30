@@ -1,0 +1,20 @@
+# 工具链、Python 库、字体：体积大，可按 tools/README.md 重新下载
+tools/*
+!tools/README.md
+
+# 分析脚本里复制的库和可再生成的缓存
+分析脚本/capstone/
+分析脚本/capstone-*.dist-info/
+分析脚本/__pycache__/
+分析脚本/*.pkl
+分析脚本/ram_*.bin
+分析脚本/out*/
+
+# 编译中间文件（build.py 会重新生成）
+A主题代码/*.o
+A主题代码/a.elf
+A主题代码/a.bin
+A主题代码/a.map
+A主题代码/link.ld
+A主题代码/a_assets.c
+A主题代码/a_assets.h

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>DB600 主界面 浅色</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Barlow+Condensed:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F4FA8}a:hover{color:#163A7D}
+</style>
+</helmet>
+<div style="width: 960px; height: 264px; overflow: hidden; background: #000000; font-family: 'Noto Sans SC', sans-serif">
+<div style="width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: #F2F0EA; color: #1B1B1D; display: flex; box-sizing: border-box; padding: 8px; gap: 8px">
+  <div style="width: 96px; display: flex; flex-direction: column; gap: 6px">
+    <div style="flex-grow: 1; border-radius: 4px; background: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center">
+      <span style="font-size: 10px; color: #5E5B55">输入</span>
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; line-height: 28px">USB</span>
+    </div>
+    <div style="height: 22px; border-radius: 4px; background: #1B1B1D; color: #F2F0EA; font-size: 11px; display: flex; align-items: center; justify-content: center">纯解码器</div>
+  </div>
+  <div style="flex-grow: 1; border-radius: 4px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
+    <div style="display: flex; gap: 4px; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600">
+      <span style="padding: 0 6px; border-radius: 7px; background: {{accent}}; color: #FFFFFF">PCM</span>
+      <span style="padding: 0 6px; border-radius: 7px; color: #6E6A63">DSD</span>
+      <span style="padding: 0 6px; border-radius: 7px; color: #6E6A63">MQA</span>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 4px">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 600; line-height: 52px">192</span>
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 500; color: #5E5B55">kHz</span>
+    </div>
+    <div style="display: flex; gap: 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 500; color: #3A3833">
+      <span>FIL-2</span><span>L</span><span>0Ω</span><span>OFF</span>
+    </div>
+  </div>
+  <div style="width: 96px; display: flex; flex-direction: column; gap: 6px">
+    <div style="flex-grow: 1; border-radius: 4px; background: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: center">
+      <span style="font-size: 10px; color: #5E5B55">解码输出</span>
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; line-height: 28px">4V</span>
+    </div>
+    <div style="height: 22px; border-radius: 4px; background: {{accent}}; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">XLR / 4V</div>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#1F4FA8","options":["#1F4FA8","#B4441F","#1F6B5A","#1B1B1D"]},"$preview":{"width":960,"height":264}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#1F4FA8' };
+}
+}
+</script>
+</body>
+</html>

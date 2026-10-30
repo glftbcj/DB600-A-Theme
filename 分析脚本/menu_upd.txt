@@ -1,0 +1,315 @@
+800b7a8  push.w  {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+800b7ac  ldr     r7, [pc, #0x2e4]             ;ram:2000dd9c
+800b7ae  ldr     r4, [pc, #0x2e8]             ;ram:20000218
+800b7b0  subw    sp, sp, #0x8d4               
+800b7b4  movs    r1, #0                       
+800b7b6  cbz     r0, #0x800b7d4               
+800b7b8  strb    r1, [r4]                     ;ram:20000218
+800b7ba  movw    r3, #0xaaaa                  
+800b7be  nop                                  
+800b7c0  ldrsb.w r2, [r4]                     ;ram:20000218
+800b7c4  str.w   r3, [r7, r2, lsl #2]         
+800b7c8  adds    r2, r2, #1                   
+800b7ca  sxtb    r2, r2                       
+800b7cc  strb    r2, [r4]                     ;ram:20000218
+800b7ce  cmp     r2, #0x28                    
+800b7d0  blt     #0x800b7c0                   
+800b7d2  strb    r1, [r4]                     ;ram:20000218
+800b7d4  mov     sl, r1                       
+800b7d6  strb    r1, [r4]                     ;ram:20000218
+800b7d8  uxtb    r0, r0                       
+800b7da  bl      #0x80100a0                   ;update_top
+800b7de  ldrsb.w sb, [r4]                     ;ram:20000218
+800b7e2  ldrsb.w r0, [r4, #3]                 ;ram:2000021b
+800b7e6  ldrsb.w r8, [r4, #2]                 ;ram:2000021a
+800b7ea  ldr.w   r1, [r7, sb, lsl #2]         
+800b7ee  add.w   r2, r0, r0, lsl #2           
+800b7f2  add.w   r5, r8, r2, lsl #1           
+800b7f6  ldr     r6, [pc, #0x2a4]             ;ram:200002a0
+800b7f8  ldr.w   fp, [pc, #0x2a4]             ;rom:20368
+800b7fc  cmp     r1, r5                       
+800b7fe  beq     #0x800b8fc                   
+800b800  mov.w   r2, #0x8c0                   
+800b804  add.w   r1, fp, #0x18                
+800b808  add     r0, sp, #4                   
+800b80a  bl      #0x800a1ca                   ;memcpy
+800b80e  str.w   r5, [r7, sb, lsl #2]         
+800b812  ldr     r0, [r4, #0xc]               ;ram:20000224
+800b814  cmp.w   r8, #0                       
+800b818  mov.w   r1, #1                       
+800b81c  beq     #0x800b834                   
+800b81e  bl      #0x8021524                   ;HIDE(add_flag)
+800b822  movs    r1, #1                       
+800b824  ldr     r0, [r4, #0x10]              ;ram:20000228
+800b826  bl      #0x8021524                   ;HIDE(add_flag)
+800b82a  movs    r1, #1                       
+800b82c  ldr     r0, [r4, #0x14]              ;ram:2000022c
+800b82e  bl      #0x8021ce4                   ;SHOW(clear_flag)
+800b832  b       #0x800b848                   
+800b834  bl      #0x8021ce4                   ;SHOW(clear_flag)
+800b838  movs    r1, #1                       
+800b83a  ldr     r0, [r4, #0x10]              ;ram:20000228
+800b83c  bl      #0x8021ce4                   ;SHOW(clear_flag)
+800b840  movs    r1, #1                       
+800b842  ldr     r0, [r4, #0x14]              ;ram:2000022c
+800b844  bl      #0x8021524                   ;HIDE(add_flag)
+800b848  ldr     r0, [r4, #0x14]              ;ram:2000022c
+800b84a  bl      #0x8021cac                   
+800b84e  ldrh    r2, [r6, #0x16]              ;ram:200002b6
+800b850  ldrsb.w r1, [r4, #1]                 ;ram:20000219
+800b854  rsb     r2, r2, r2, lsl #3           
+800b858  add.w   r3, r2, r2, lsl #2           
+800b85c  add     r2, sp, #4                   
+800b85e  add.w   r1, r1, r1, lsl #2           
+800b862  add.w   r3, r2, r3, lsl #5           
+800b866  movs    r0, #0                       
+800b868  add.w   r1, r3, r1, lsl #4           
+800b86c  mov     r8, r2                       
+800b86e  ldr.w   r3, [r1, r0, lsl #2]         
+800b872  cbz     r3, #0x800b87c               
+800b874  adds    r0, r0, #1                   
+800b876  sxtb    r0, r0                       
+800b878  cmp     r0, #0x14                    
+800b87a  blt     #0x800b86c                   
+800b87c  strb    r0, [r4, #6]                 ;ram:2000021e
+800b87e  movs    r5, #0                       
+800b880  mvn     sb, #0x59                    
+800b884  b       #0x800ba06                   
+800b886  ldr     r0, [r4, #0x14]              ;ram:2000022c
+800b888  bl      #0x8020570                   ;label_create
+800b88c  str.w   r0, [sp, #0x8c4]             
+800b890  ldrh    r0, [r6, #0x16]              ;ram:200002b6
+800b892  mov.w   r2, #0                       
+800b896  cbz     r0, #0x800b8be               
+800b898  ldr     r1, [pc, #0x208]             ;rom:2ce30
+800b89a  nop                                  
+800b89c  ldr.w   r0, [sp, #0x8c4]             
+800b8a0  bl      #0x8024df6                   ;set_text_font
+800b8a4  ldrh    r0, [r6, #0x24]              ;ram:200002c4
+800b8a6  cmp     r0, #0                       
+800b8a8  beq     #0x800b8b0                   
+800b8aa  nop                                  
+800b8ac  mov.w   r0, #1                       
+800b8b0  ldr     r1, [pc, #0x1f4]             ;0x544001
+800b8b2  mul     r0, r0, r1                   
+800b8b6  bne     #0x800b8c2                   
+800b8b8  mov.w   r1, #1                       
+800b8bc  b       #0x800b8c6                   
+800b8be  ldr     r1, [pc, #0x1ec]             ;rom:26f14
+800b8c0  b       #0x800b89c                   
+800b8c2  mov.w   r1, #0                       
+800b8c6  ldr     r2, [pc, #0x1e8]             ;0x3d73a1
+800b8c8  mul     r1, r1, r2                   
+800b8cc  add.w   r0, r0, r1, lsl #2           
+800b8d0  beq     #0x800b8d8                   
+800b8d2  mov.w   r1, #1                       
+800b8d6  b       #0x800b8dc                   
+800b8d8  mov.w   r1, #0                       
+800b8dc  mul     r0, r0, r1                   
+800b8e0  bl      #0x801bcba                   ;color_hex
+800b8e4  mov     r1, r0                       
+800b8e6  movs    r2, #0                       
+800b8e8  ldr.w   r0, [sp, #0x8c4]             
+800b8ec  bl      #0x8024ddc                   ;set_text_color
+800b8f0  cmp     r5, #6                       
+800b8f2  bge     #0x800b91e                   
+800b8f4  ldrh    r0, [r6, #0x16]              ;ram:200002b6
+800b8f6  rsb     r0, r0, r0, lsl #3           
+800b8fa  b       #0x800b8fe                   
+800b8fc  b       #0x800ba10                   
+800b8fe  add.w   r1, r0, r0, lsl #2           
+800b902  add.w   r0, r8, r1, lsl #5           
+800b906  ldrsb.w r1, [r4, #1]                 ;ram:20000219
+800b90a  add.w   r1, r1, r1, lsl #2           
+800b90e  add.w   r0, r0, r1, lsl #4           
+800b912  ldr.w   r1, [r0, r5, lsl #2]         
+800b916  ldr.w   r0, [sp, #0x8c4]             
+800b91a  bl      #0x8020e4c                   ;label_set_text
+800b91e  movs    r2, #0                       
+800b920  mov     r1, r2                       
+800b922  ldr.w   r0, [sp, #0x8c4]             
+800b926  bl      #0x8024d94                   
+800b92a  ldrsb.w r0, [r4, #6]                 ;ram:2000021e
+800b92e  cmp     r0, #2                       
+800b930  ble     #0x800b982                   
+800b932  add.w   r2, r5, r5, lsr #31          
+800b936  bic     r0, r2, #1                   
+800b93a  subs    r0, r5, r0                   
+800b93c  add.w   r0, r0, r0, lsl #1           
+800b940  mvn     r1, #9                       
+800b944  add.w   r3, r1, r0, lsl #3           
+800b948  asrs    r0, r2, #1                   
+800b94a  rsb     r0, r0, r0, lsl #4           
+800b94e  add.w   r1, r0, r0, lsl #1           
+800b952  add.w   r0, sb, r1, lsl #2           
+800b956  sxth    r2, r0                       
+800b958  movs    r1, #9                       
+800b95a  ldr.w   r0, [sp, #0x8c4]             
+800b95e  bl      #0x8021644                   ;obj_align
+800b962  lsls    r0, r5, #0x1f                
+800b964  beq     #0x800b97a                   
+800b966  movs    r0, #0x18                    
+800b968  str     r0, [sp]                     
+800b96a  movs    r3, #0                       
+800b96c  movs    r2, #7                       
+800b96e  ldr     r1, [r4, #8]                 ;ram:20000220
+800b970  ldr.w   r0, [sp, #0x8c4]             
+800b974  bl      #0x8021660                   ;obj_align_to
+800b978  b       #0x800b9a6                   
+800b97a  ldr.w   r0, [sp, #0x8c4]             
+800b97e  str     r0, [r4, #8]                 ;ram:20000220
+800b980  b       #0x800b9a6                   
+800b982  add.w   r0, r5, r5, lsr #31          
+800b986  bic     r0, r0, #1                   
+800b98a  subs    r0, r5, r0                   
+800b98c  rsb     r0, r0, r0, lsl #4           
+800b990  add.w   r1, r0, r0, lsl #1           
+800b994  add.w   r0, sb, r1, lsl #2           
+800b998  sxth    r2, r0                       
+800b99a  movs    r3, #2                       
+800b99c  movs    r1, #9                       
+800b99e  ldr.w   r0, [sp, #0x8c4]             
+800b9a2  bl      #0x8021644                   ;obj_align
+800b9a6  ldrh    r0, [r6, #0x24]              ;ram:200002c4
+800b9a8  cmp     r0, #0                       
+800b9aa  mov     r0, fp                       
+800b9ac  beq     #0x800b9d2                   
+800b9ae  ldr     r1, [r0, #8]                 
+800b9b0  ldr.w   r0, [fp, #0xc]               ;rom:20374
+800b9b4  str.w   r1, [sp, #0x8cc]             
+800b9b8  str.w   r0, [sp, #0x8d0]             
+800b9bc  ldr     r0, [r4, #0x14]              ;ram:2000022c
+800b9be  bl      #0x801f78c                   ;img_create
+800b9c2  str.w   r0, [sp, #0x8c8]             
+800b9c6  ldrsb.w r0, [r4, #3]                 ;ram:2000021b
+800b9ca  cmp     r0, r5                       
+800b9cc  bne     #0x800b9da                   
+800b9ce  movs    r0, #1                       
+800b9d0  b       #0x800b9dc                   
+800b9d2  ldr     r1, [r0]                     
+800b9d4  ldr.w   r0, [fp, #4]                 ;rom:2036c
+800b9d8  b       #0x800b9b4                   
+800b9da  movs    r0, #0                       
+800b9dc  addw    r1, sp, #0x8cc               
+800b9e0  ldr.w   r1, [r1, r0, lsl #2]         
+800b9e4  ldr.w   r0, [sp, #0x8c8]             
+800b9e8  bl      #0x80201ac                   ;img_set_src
+800b9ec  mvn     r3, #3                       
+800b9f0  movs    r2, #0x11                    
+800b9f2  str.w   sl, [sp]                     
+800b9f6  ldr.w   r1, [sp, #0x8c4]             
+800b9fa  ldr.w   r0, [sp, #0x8c8]             
+800b9fe  bl      #0x8021660                   ;obj_align_to
+800ba02  adds    r5, r5, #1                   
+800ba04  sxtb    r5, r5                       
+800ba06  ldrsb.w r0, [r4, #6]                 ;ram:2000021e
+800ba0a  cmp     r5, r0                       
+800ba0c  blt.w   #0x800b886                   
+800ba10  ldrb    r0, [r4]                     ;ram:20000218
+800ba12  mov     sl, r7                       
+800ba14  adds    r0, r0, #1                   
+800ba16  sxtb    r5, r0                       
+800ba18  ldr     r0, [pc, #0x98]              ;ram:200000a6
+800ba1a  strb    r5, [r4]                     ;ram:20000218
+800ba1c  ldrsb.w r8, [r4, #1]                 ;ram:20000219
+800ba20  ldrb.w  sb, [r0]                     ;ram:200000a6
+800ba24  ldr.w   r1, [r7, r5, lsl #2]         
+800ba28  add.w   r2, sb, sb, lsl #2           
+800ba2c  add.w   r7, r8, r2, lsl #1           
+800ba30  cmp     r1, r7                       
+800ba32  beq     #0x800ba70                   
+800ba34  movs    r2, #0xa0                    
+800ba36  ldr     r1, [pc, #0x80]              ;rom:20c40
+800ba38  mov     r0, sp                       
+800ba3a  bl      #0x800a1ca                   ;memcpy
+800ba3e  str.w   r7, [sl, r5, lsl #2]         
+800ba42  cmp.w   sb, #0                       
+800ba46  beq     #0x800ba4e                   
+800ba48  cmp.w   r8, #3                       
+800ba4c  beq     #0x800ba7e                   
+800ba4e  movs    r1, #0                       
+800ba50  ldr     r0, [r4, #0x10]              ;ram:20000228
+800ba52  bl      #0x802253a                   
+800ba56  ldrh    r1, [r6, #0x16]              ;ram:200002b6
+800ba58  mov     r2, sp                       
+800ba5a  add.w   r1, r1, r1, lsl #2           
+800ba5e  add.w   r1, r2, r1, lsl #4           
+800ba62  ldrsb.w r2, [r4, #1]                 ;ram:20000219
+800ba66  nop                                  
+800ba68  ldr.w   r1, [r1, r2, lsl #2]         
+800ba6c  bl      #0x8020e4c                   ;label_set_text
+800ba70  ldrb    r0, [r4]                     ;ram:20000218
+800ba72  adds    r0, r0, #1                   
+800ba74  strb    r0, [r4]                     ;ram:20000218
+800ba76  addw    sp, sp, #0x8d4               
+800ba7a  pop.w   {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+800ba7e  ldrd    r1, r0, [fp, #0x10]          ;rom:20378
+800ba82  strd    r1, r0, [sp, #0xa0]          
+800ba86  movs    r1, #0                       
+800ba88  ldr     r0, [r4, #0x10]              ;ram:20000228
+800ba8a  bl      #0x802253a                   
+800ba8e  ldrh    r2, [r6, #0x16]              ;ram:200002b6
+800ba90  add     r1, sp, #0xa0                
+800ba92  b       #0x800ba68                   
+800ba94  ble     #0x800b9d0                   
+800ba96  movs    r0, #0                       
+800ba98  lsls    r0, r3, #8                   
+800ba9a  movs    r0, #0                       
+800ba9c  lsls    r0, r4, #0xa                 
+800ba9e  movs    r0, #0                       
+800baa0  adr     r3, #0x1a0                   ;rom:1c44
+800baa2  lsrs    r2, r0, #0x20                
+800baa4  ldr     r0, [r6, #0x60]              ;ram:20000300
+800baa6  lsrs    r3, r0, #0x20                
+800baa8  ands    r1, r0                       
+800baaa  lsls    r4, r2, #1                   
+800baac  lsrs    r4, r2, #0x1c                
+800baae  lsrs    r3, r0, #0x20                
+800bab0  strb    r1, [r4, #0xe]               
+800bab2  movs    r5, r7                       
+800bab4  lsls    r6, r4, #2                   
+800bab6  movs    r0, #0                       
+800bab8  add     r4, sp, #0x100               
+800baba  lsrs    r2, r0, #0x20                
+800babc  push    {r4, lr}                     
+800babe  ldr     r1, [pc, #0x50]              ;ram:2000dea0
+800bac0  ldr     r4, [pc, #0x50]              ;ram:2000024c
+800bac2  movs    r2, #0                       
+800bac4  cbz     r0, #0x800bae0               
+800bac6  strb    r2, [r4]                     ;ram:2000024c
+800bac8  movw    r3, #0xaaaa                  
+800bacc  ldrsb.w r0, [r4]                     ;ram:2000024c
+800bad0  str.w   r3, [r1, r0, lsl #2]         
+800bad4  adds    r0, r0, #1                   
+800bad6  sxtb    r0, r0                       
+800bad8  strb    r0, [r4]                     ;ram:2000024c
+800bada  cmp     r0, #0x28                    
+800badc  blt     #0x800bacc                   
+800bade  strb    r2, [r4]                     ;ram:2000024c
+800bae0  ldr     r0, [pc, #0x34]              ;ram:200002a0
+800bae2  strb    r2, [r4]                     ;ram:2000024c
+800bae4  ldr     r3, [r1]                     ;ram:2000dea0
+800bae6  ldrh    r0, [r0, #0x16]              ;ram:200002b6
+800bae8  cmp     r3, r0                       
+800baea  beq     #0x800bb06                   
+800baec  str.w   r0, [r1, r2, lsl #2]         
+800baf0  mov.w   r3, #0xf                     
+800baf4  cbz     r0, #0x800bafc               
+800baf6  mvn     r2, #0x36                    
+800bafa  b       #0x800bafe                   
+800bafc  movs    r2, #0x2d                    
+800bafe  movs    r1, #9                       
+800bb00  ldr     r0, [r4, #8]                 ;ram:20000254
+800bb02  bl      #0x8021644                   ;obj_align
+800bb06  ldrb    r0, [r4]                     ;ram:2000024c
+800bb08  adds    r0, r0, #1                   
+800bb0a  strb    r0, [r4]                     ;ram:2000024c
+800bb0c  pop     {r4, pc}                     
+800bb10  udf     #0xa0                        
+800bb12  movs    r0, #0                       
+800bb14  lsls    r4, r1, #9                   
+800bb16  movs    r0, #0                       
+800bb18  lsls    r0, r4, #0xa                 
+800bb1a  movs    r0, #0                       
+800bb1c  push    {r4, r5, r6, r7}             
+800bb1e  ldr     r0, [pc, #0x58]              ;ram:200002dc

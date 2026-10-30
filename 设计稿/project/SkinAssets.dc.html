@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>换皮素材与颜色槽</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1F3A5F}a:hover{color:#142740}
+</style>
+</helmet>
+<div style="width: 2000px; min-height: 760px; box-sizing: border-box; padding: 40px; background: #FAF8F4; color: #1B1B1D; font-family: 'Noto Sans SC', sans-serif; display: flex; flex-direction: column; gap: 28px">
+  <div style="display: flex; justify-content: space-between; align-items: baseline">
+    <h1 style="margin: 0; font-size: 30px; font-weight: 700">要替换的图片（尺寸必须与原图一致）</h1>
+    <span style="font-size: 15px; color: #5E5B55">图片格式：每张 ≤256 色调色板 + 透明度 · 预览放大显示</span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+    <sc-for list="{{items}}" as="it" hint-placeholder-count="12">
+      <div style="background: #FFFFFF; border: 1px solid #E3DED4; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
+          <span style="font-size: 17px; font-weight: 700">{{it.name}}</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #5E5B55">{{it.size}} · {{it.off}}</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; min-height: 60px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 12px; color: #5E5B55">原图</span>
+            <div style="background: #4A4A52; padding: 6px; border-radius: 4px; display: flex"><img src="{{it.src}}" alt="{{it.name}} 原图" style="{{it.imgStyle}}"></div>
+          </div>
+          <span style="font-size: 18px; color: #9C968B">→</span>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 12px; color: #5E5B55">新图</span>
+            <div style="background: #F4F1EA; padding: 6px; border-radius: 4px; display: flex"><div style="{{it.newStyle}}"></div></div>
+          </div>
+        </div>
+        <span style="font-size: 13px; color: #3A3833; line-height: 20px">{{it.note}}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-size: 24px; font-weight: 700">颜色槽（代码里的色值，可直接改）</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+      <sc-for list="{{slots}}" as="s" hint-placeholder-count="4">
+        <div style="background: #FFFFFF; border: 1px solid #E3DED4; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 16px; font-weight: 700">{{s.name}}</span>
+          <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px">
+            <div style="{{s.oldSw}}"></div><span>{{s.old}}</span><span style="color: #9C968B">→</span><div style="{{s.newSw}}"></div><span>{{s.new}}</span>
+          </div>
+          <span style="font-size: 13px; color: #3A3833; line-height: 20px">{{s.note}}</span>
+        </div>
+      </sc-for>
+    </div>
+    <span style="font-size: 14px; color: #7A2E1F; line-height: 22px">固定为深色、不在颜色槽里的文字：采样率数字、PCM/DSD/MQA、标题文字。所以背景和这些文字底下的图都必须保持浅色。</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C42A1C","options":["#C42A1C","#D9401F","#9E2016"]},"$preview":{"width":2000,"height":760}}'>
+class Component extends DCLogic {
+renderVals() {
+const a = this.props.accent ?? '#C42A1C';
+const K = '#1A1410', C = '#FBE4C2';
+const ticks = 'repeating-linear-gradient(90deg,' + K + ' 0 1px,transparent 1px 8px) 0 0/80% 75% no-repeat,repeating-linear-gradient(90deg,' + a + ' 0 1px,transparent 1px 8px) 100% 0/20% 75% no-repeat,linear-gradient(90deg,' + K + ' 80%,' + a + ' 80%) 0 100%/100% 25% no-repeat';
+const fit = (w, h) => { const k = Math.min(2, 230 / w); return 'display:block;width:' + Math.round(w * k) + 'px;height:' + Math.round(h * k) + 'px;image-rendering:pixelated'; };
+const box = (w, h, extra) => { const k = Math.min(2, 230 / w); return 'width:' + Math.round(w * k) + 'px;height:' + Math.round(h * k) + 'px;box-sizing:border-box;' + extra; };
+const items = [
+  { name: '标题牌', size: '178×34', off: '0x2EAE0', src: '/_blob/640432e6067127c333f4a69c86a458af', w: 178, h: 34, nw: 'background:' + C + ';border:4px solid ' + K + ';border-radius:6px', note: '像 VU 表的黑框表窗。两套主题共用。' },
+  { name: '分隔线（刻度条）', size: '465×4', off: '0x4A9CC', src: '/_blob/08e93c020dcb80f780c2d7a911affacf', w: 465, h: 4, nw: 'background:' + ticks, note: 'UI2 专用。做成 VU 表的刻度线，最右 20% 是红区。' },
+  { name: '输入 / 输出框', size: '81×51', off: '0x49E7C', src: '/_blob/4373cb67a07bc803874a914b5359a92c', w: 81, h: 51, nw: 'background:linear-gradient(' + C + ' 49%,#C99A5E 49%,#C99A5E 51%,' + C + ' 51%);border:4px solid ' + K + ';border-radius:6px', note: 'UI2 专用，左右共用一张。黑框表窗，中间一条细线。' },
+  { name: '采样率框', size: '126×36', off: '0x48450', src: '/_blob/d5156b8f9f5e5cfe5bdc778faef92ad4', w: 126, h: 36, nw: 'background:' + C + ';border:4px solid ' + K + ';border-radius:6px', note: 'UI2 专用。框里的字固定是深色，所以表窗做浅色。' },
+  { name: '状态小块', size: '31×16', off: '0x48A4C', src: '/_blob/10d140d0e61bb203b7f5159d589296c6', w: 31, h: 16, nw: 'background:' + a + ';border:2px solid ' + K + ';border-radius:4px', note: 'UI2 专用，4 个共用。红底，呼应面板上的红色数码管；照片上这里的字是白色。' },
+  { name: '指示点（两张）', size: '6×6', off: '0x46E14 / 0x46E8C', src: '/_blob/4e2a5db9f57e8bcff0b413af25e1b5b7', w: 6, h: 6, nw: 'background:' + a + ';border-radius:6px', note: '亮起是红色实心，未亮是黑色空心圈。' },
+  { name: '音量刻度', size: '474×39', off: '0x4F610', src: '/_blob/11fa0d36921968ac0374bd491aa6860a', w: 474, h: 39, nw: 'background:repeating-linear-gradient(90deg,' + K + ' 0 1px,transparent 1px 15px) 0 0/80% 45% no-repeat,repeating-linear-gradient(90deg,' + a + ' 0 1px,transparent 1px 15px) 100% 0/20% 45% no-repeat', note: 'UI2 专用。照着 VU 表画：黑色刻度，90~100 红区。数字是画在图里的，要一起重画。' },
+  { name: '音量指针', size: '15×55', off: '0x2F228', src: '/_blob/f8a9dd83a4cc21f65714ca04d41fec97', w: 15, h: 55, nw: 'background:linear-gradient(90deg,transparent 43%,' + K + ' 43%,' + K + ' 57%,transparent 57%)', note: '两套主题共用。改成 VU 表那样的黑色细针。' },
+  { name: '菜单底板', size: '382×55', off: '0x46D9C', src: '/_blob/6f491bcb0bb726acd551ada441279cb6', w: 382, h: 55, nw: 'background:' + C + ';border:4px solid ' + K + ';border-radius:6px', note: '设置菜单的底板。两套主题共用。' },
+  { name: '菜单选中框', size: '127×36', off: '0x50BF8', src: '/_blob/291d507ba01d8ea04f78fb92542fcf04', w: 127, h: 36, nw: 'background:' + a + ';border:2px solid ' + K + ';border-radius:4px', note: 'UI2 专用。里面字的颜色还没确认，暂按白色设计。' },
+  { name: '语言弹窗', size: '256×80', off: '0x40194', src: '/_blob/ccc4b8e5379c277f523cf912a534a5b5', w: 256, h: 80, nw: 'background:linear-gradient(90deg,' + C + ' 49.8%,#C99A5E 49.8%,#C99A5E 50.2%,' + C + ' 50.2%);border:4px solid ' + K + ';border-radius:6px', note: '两套主题共用。中间一条竖线分开「语言」和选项。' },
+  { name: '提示弹窗', size: '155×80', off: '0x372E8', src: '/_blob/fb5053fe05dc4240a2ee0654eb4b0f60', w: 155, h: 80, nw: 'background:' + C + ';border:4px solid ' + K + ';border-radius:6px', note: '时钟失联之类的提示框。两套主题共用。' }
+].map((it) => ({ ...it, imgStyle: fit(it.w, it.h), newStyle: box(it.w, it.h, it.nw) }));
+const sw = (c) => 'width:22px;height:22px;border-radius:4px;border:1px solid #C9C3B7;background:' + c;
+const slots = [
+  { name: '背景色（UI2）', old: '#EFD961', new: '#F2C38A', note: 'UI2 屏幕底色，做成 VU 表盘那种暖橙背光色。3 处：0x2544 / 0x44F4 / 0x526C。UI1 的底色由代码算成纯黑，不走这个值。' },
+  { name: 'UI1 金色字（已更正）', old: '#F5CE84', new: '见 A 主题', note: '之前写错了：0x3D73A1 不是 UI2 的蓝字，而是 UI1 金字 ÷4。4 处：0x149C / 0x1AB0 / 0x2560 / 0x48F4。' },
+  { name: '文字色（UI2）', old: '#544001', new: '#1A1410', note: 'UI2 里 USB、输入、输出、采样率都用同一个值，所以大字和小字没法分成两种颜色。6 处，都已确认是 UI2 文字色。' },
+  { name: '待确认', old: '#623A16', new: '#623A16', note: '只出现 1 处（0x451C），用途还不清楚，先不动。' }
+].map((s) => ({ ...s, oldSw: sw(s.old), newSw: sw(s.new) }));
+return { items, slots };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+50c00	?	1c9605080a
+50c08	utf8	Btn1
+50c10	utf8	Btn2
+50c18	utf8	Btn3
+50c20	utf8	Btn4
+50c28	utf8	Btn5
+50c34	utf8	512
+50c38	utf8	64
+50c3c	utf8	256
+50c40	utf8	128
+50c44	utf8	COA
+50c48	utf8	MQA
+50c4c	utf8	USB
+50c50	utf8	DAC
+50c54	utf8	DSD
+50c58	utf8	PHONE
+50c60	utf8	PRE
+50c64	utf8	MUTE
+50c6c	utf8	OFF
+50c70	utf8	SH
+50c78	utf8	NLOCK
+50c80	utf8	ALL
+50c88	utf8	PCM
+50c90	utf8	ON
+50c94	utf8	AES
+50c98	utf8	I²S
+50ca0	utf8	BT
+50ca4	utf8	OPT
+50ca8	utf8	4V
+50cac	utf8	6V
+50cb0	utf8	8V
+50cb4	utf8	44.1 kHz
+50cc0	utf8	88.2 kHz
+50ccc	utf8	32 kHz
+50cd4	utf8	192 kHz
+50cdc	utf8	176.4 kHz
+50ce8	utf8	24 kHz
+50cf0	utf8	64 kHz
+50cf8	utf8	384 kHz
+50d00	utf8	705.6 kHz
+50d0c	utf8	16 kHz
+50d14	utf8	96 kHz
+50d1c	utf8	352.8 kHz
+50d28	utf8	128 kHz
+50d30	utf8	48 kHz
+50d38	utf8	768 kHz
+50d40	utf8	8 kHz
+50d48	utf8	11.02kHz
+50d54	utf8	22.05kHz
+50d60	utf8	解码
+50d68	utf8	蓝牙
+50d70	utf8	数字平衡
+50d80	utf8	全端口
+50d8c	utf8	光纤
+50d94	utf8	前级
+50d9c	utf8	0Ω
+50da0	utf8	32Ω
+50da8	utf8	64Ω
+50db0	utf8	16Ω
+50db8	utf8	同轴
+50dc0	utf8	耳机
+50dc8	utf8	.........
+50dd4	utf8	.......
+50ddc	utf8	.....
+50de4	utf8	...
+50dec	utf8	100%
+50df4	utf8	50%
+50df8	utf8	25%
+50dfc	utf8	75%
+50e00	utf8	UI1
+50e04	utf8	UI2
+50e08	utf8	CONTINUED
+50e14	utf8	THEME
+50e1c	utf8	INTERNAL CLOCK
+50e2c	utf8	EXTERNAL CLOCK
+50e3c	utf8	CLOCK
+50e44	utf8	CONFIRM
+50e4c	utf8	RETURN
+50e54	utf8	DIMMER
+50e5c	utf8	15 SECONDS
+50e68	utf8	45 SECONDS
+50e74	utf8	5 MINUTES
+50e80	utf8	BRIGHTNESS
+50e8c	utf8	CLOCK LOSS
+50e98	utf8	RESET
+50ea0	utf8	保持
+50ea8	utf8	复位
+50eb0	utf8	15秒
+50eb8	utf8	45秒
+50ec0	utf8	时钟失联
+50ed0	utf8	背景菜单
+50ee0	utf8	确定
+50ee8	utf8	返回
+50ef0	utf8	5分钟
+50ef8	utf8	内部时钟
+50f08	utf8	外部时钟
+50f18	utf8	时钟切换
+50f28	utf8	屏幕亮度
+50f38	utf8	亮屏时长
+50f48	utf8	PHONE-OFF
+50f54	utf8	GAIN-H
+50f5c	utf8	GAIN-SH
+50f64	utf8	GAIN-L
+50f6c	utf8	GAIN-M
+50f74	utf8	PHONE-ON
+50f80	utf8	0欧姆
+50f88	utf8	32欧姆
+50f94	utf8	64欧姆
+50fa0	utf8	16欧姆
+50fac	utf8	增益-低
+50fb8	utf8	增益-高
+50fc4	utf8	增益-超高
+50fd4	utf8	耳放电路-关闭
+50fe8	utf8	增益-中
+50ff4	utf8	耳放电路-开启
+51008	?	28b00508
+5100f	?	20a002
+51014	?	e8a6
+51017	?	08acb00508a002
+5101f	?	20a0ec
+51024	?	30060108a10370ffffc9720717436a8848eeb582aa45020406082d01020304040627060708092d02770145d4c3b2a102176f180ab16e0208d96d020851041a690c1a89081ab1041e08ac050810041a18041a04041a20041a280405a044af0508100990ad0208980603081a0f04513a01081a3010cfa01603086c1a181a9c10cf6c6503081c6e18

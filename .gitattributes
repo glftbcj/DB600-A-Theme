@@ -1,0 +1,4 @@
+*.bin binary
+*.png binary
+*.ttf binary
+*.pkl binary

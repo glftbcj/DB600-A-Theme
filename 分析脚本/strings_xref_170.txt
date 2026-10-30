@@ -1,0 +1,151 @@
+1458 '全端口'                  800b1c8(f800b030)
+1464 '耳机'                   800b1cc(f800b030)
+146c '%s&%s'                800b21e(f800b030)
+147c 'PHONE'                800b238(f800b030)
+1770 'IR:EN'                800b6d2(f800b030)
+1778 'IR:OFF'               800b6d6(f800b030)
+1780 '遥控:关'                 800b6da(f800b030)
+178c 'IIC Err'              800b6e2(f800b030)
+1794 '%s-%02X'              800b6f4(f800b030)
+2568 '输入'                   800c20e(f800c14c)
+2574 'IN'                   800c254(f800c14c)
+2578 'XLR'                  800c2ac(f800c14c)
+257c '输出'                   800c324(f800c14c)
+2584 'OUT'                  800c368(f800c14c)
+258c '32kHz'                800c3c2(f800c14c)
+25a8 'FIL-1'                800c4bc(f800c14c)
+25b0 '16Ω'                  800c516(f800c14c)
+26dc 'ON'                   800c644(f800c14c)
+4500 '中文'                   800e428(f800e3a0)
+4510 'English'              800e468(f800e3a0)
+48d8 ' 主菜单 '                800e784(f800e764)
+48ec ' MENU '               800e7b8(f800e764)
+48fc 'BRIGHTNESS'           800e828(f800e764)
+5278 '正在启动'                 800f1e0(f800f144)
+529c 'STARTING'             800f25e(f800f144)
+6460 'DSD滤波器-%d'            8010236(f80100a0)
+6470 'FILTER-%d'            8010244(f80100a0)
+647c 'DSD FILTER-%d'        801024a(f80100a0)
+648c '清除蓝牙设备'               8010254(f80100a0)
+64a0 'CLEAR BT'             8010258(f80100a0)
+64b0 '%s输入'                 801028a(f80100a0)
+64bc '%s IN'                8010292(f80100a0)
+64c4 '%s输出'                 80102d4(f80100a0)
+64d0 '%s OUT'               80102dc(f80100a0)
+64e4 'MUTE'                 8010394(f80100a0)
+64f0 '纯解码器'                 80103c0(f80100a0)
+6500 'DAC MODE'             80103c4(f80100a0)
+65e4 'DAC MODE'             8010592(f801050c)
+74eb 'h@XpG'                801f3b8(f801f33c)
+7f18 '0123456789abcdef'     8011e36(f8011b30)
+7f2c '0123456789ABCDEF'     8011e40(f8011b30)
+117fc 'Check box'            801b7d2(f801b7d0)
+15880 'bin'                  801f820(f801f7d8)
+15cc8 'bin'                  801fb6c(f801fb54)
+16568 'Text'                 8020562(f802050c)
+50c08 'Btn1'                 tbl@5106c
+50c34 '512'                  tbl@20308
+50c38 '64'                   tbl@202fc
+50c3c '256'                  tbl@20304
+50c40 '128'                  tbl@20300
+50c44 'COA'                  tbl@20260 tbl@20d00
+50c48 'MQA'                  tbl@20350
+50c4c 'USB'                  tbl@20250 tbl@20268 tbl@20cf0 tbl@20d08
+50c50 'DAC'                  tbl@20284 tbl@20d24
+50c54 'DSD'                  tbl@2034c
+50c58 'PHONE'                tbl@20288 tbl@20d28
+50c60 'PRE'                  tbl@2028c tbl@20d2c
+50c64 'MUTE'                 tbl@2030c
+50c6c 'OFF'                  tbl@20248
+50c70 'SH'                   tbl@20344
+50c78 'NLOCK'                tbl@202b0
+50c80 'ALL'                  tbl@20280 tbl@20d20
+50c88 'PCM'                  tbl@20348
+50c90 'ON'                   tbl@2024c
+50c94 'AES'                  tbl@20264 tbl@20d04
+50c98 'I²S'                  tbl@20258 tbl@20270 tbl@20cf8 tbl@20d10
+50ca0 'BT'                   tbl@20254 tbl@20cf4
+50ca4 'OPT'                  tbl@2025c tbl@20cfc
+50ca8 '4V'                   tbl@202a4 tbl@20d84
+50cac '6V'                   tbl@202a8 tbl@20d88
+50cb0 '8V'                   tbl@202a0 tbl@20d80
+50cb4 '44.1 kHz'             tbl@202cc
+50cc0 '88.2 kHz'             tbl@202d8
+50ccc '32 kHz'               tbl@202c8
+50cd4 '192 kHz'              tbl@202e8
+50cdc '176.4 kHz'            tbl@202e4
+50ce8 '24 kHz'               tbl@202c4
+50cf0 '64 kHz'               tbl@202d4
+50cf8 '384 kHz'              tbl@202f0
+50d00 '705.6 kHz'            tbl@202f4
+50d0c '16 kHz'               tbl@202bc
+50d14 '96 kHz'               tbl@202dc
+50d1c '352.8 kHz'            tbl@202ec
+50d28 '128 kHz'              tbl@202e0
+50d30 '48 kHz'               tbl@202d0
+50d38 '768 kHz'              tbl@202f8
+50d40 '8 kHz'                tbl@202b4
+50d48 '11.02kHz'             tbl@202b8
+50d54 '22.05kHz'             tbl@202c0
+50d60 '解码'                   tbl@20294 tbl@20d34
+50d68 '蓝牙'                   tbl@2026c tbl@20d0c
+50d70 '数字平衡'                 8029fe6(f8029f52) tbl@2027c tbl@20d1c
+50d80 '全端口'                  tbl@20290 tbl@20d30
+50d8c '光纤'                   tbl@20274 tbl@20d14
+50d94 '前级'                   tbl@2029c tbl@20d3c
+50d9c '0Ω'                   tbl@20328 tbl@20d60
+50da0 '32Ω'                  tbl@20330 tbl@20d68
+50da8 '64Ω'                  tbl@2032c tbl@20d64
+50db0 '16Ω'                  tbl@20334 tbl@20d6c
+50db8 '同轴'                   tbl@20278 tbl@20d18
+50dc0 '耳机'                   tbl@20298 tbl@20d38
+50dec '100%'                 tbl@2038c tbl@207ec
+50df4 '50%'                  tbl@20384 tbl@207e4
+50df8 '25%'                  tbl@20380 tbl@207e0
+50dfc '75%'                  tbl@20388 tbl@207e8
+50e00 'UI1'                  tbl@204c0 tbl@20920
+50e04 'UI2'                  tbl@204c4 tbl@20924
+50e08 'CONTINUED'            tbl@203dc
+50e14 'THEME'                tbl@20c50
+50e1c 'INTERNAL CLOCK'       tbl@20470
+50e2c 'EXTERNAL CLOCK'       tbl@20474
+50e3c 'CLOCK'                tbl@20c4c
+50e44 'CONFIRM'              tbl@20420
+50e4c 'RETURN'               tbl@20424 tbl@20c54
+50e54 'DIMMER'               tbl@20c44
+50e5c '15 SECONDS'           tbl@203d0
+50e68 '45 SECONDS'           tbl@203d4
+50e74 '5 MINUTES'            tbl@203d8
+50e80 'BRIGHTNESS'           tbl@20c40
+50e8c 'CLOCK LOSS'           tbl@20378
+50e98 'RESET'                tbl@20c48
+50ea0 '保持'                   tbl@2083c
+50ea8 '复位'                   tbl@20c98
+50eb0 '15秒'                  tbl@20830
+50eb8 '45秒'                  tbl@20834
+50ec0 '时钟失联'                 tbl@2037c
+50ed0 '背景菜单'                 tbl@20ca0
+50ee0 '确定'                   tbl@20880
+50ee8 '返回'                   tbl@20884 tbl@20ca4
+50ef0 '5分钟'                  tbl@20838
+50ef8 '内部时钟'                 tbl@208d0
+50f08 '外部时钟'                 tbl@208d4
+50f18 '时钟切换'                 tbl@20c9c
+50f28 '屏幕亮度'                 tbl@20c90
+50f38 '亮屏时长'                 tbl@20c94
+50f48 'PHONE-OFF'            tbl@20ce0
+50f54 'GAIN-H'               tbl@20d48
+50f5c 'GAIN-SH'              tbl@20d4c
+50f64 'GAIN-L'               tbl@20d40
+50f6c 'GAIN-M'               tbl@20d44
+50f74 'PHONE-ON'             tbl@20ce4
+50f80 '0欧姆'                  tbl@20d70
+50f88 '32欧姆'                 tbl@20d78
+50f94 '64欧姆'                 tbl@20d74
+50fa0 '16欧姆'                 tbl@20d7c
+50fac '增益-低'                 tbl@20d50
+50fb8 '增益-高'                 tbl@20d58
+50fc4 '增益-超高'                tbl@20d5c
+50fd4 '耳放电路-关闭'              tbl@20ce8
+50fe8 '增益-中'                 tbl@20d54
+50ff4 '耳放电路-开启'              tbl@20cec

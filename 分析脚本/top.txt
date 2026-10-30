@@ -1,0 +1,341 @@
+80100a0  push.w  {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+80100a4  ldr     r7, [pc, #0x378]             ;ram:2000de3c
+80100a6  ldr     r4, [pc, #0x37c]             ;ram:20000234
+80100a8  sub     sp, #0x34                    
+80100aa  movs    r1, #0                       
+80100ac  cbz     r0, #0x80100c8               
+80100ae  strb    r1, [r4]                     ;ram:20000234
+80100b0  movw    r2, #0xaaaa                  
+80100b4  ldrsb.w r0, [r4]                     ;ram:20000234
+80100b8  str.w   r2, [r7, r0, lsl #2]         
+80100bc  adds    r0, r0, #1                   
+80100be  sxtb    r0, r0                       
+80100c0  strb    r0, [r4]                     ;ram:20000234
+80100c2  cmp     r0, #5                       
+80100c4  blt     #0x80100b4                   
+80100c6  strb    r1, [r4]                     ;ram:20000234
+80100c8  mov     sb, r1                       
+80100ca  mov     r0, r1                       
+80100cc  strb    r1, [r4]                     ;ram:20000234
+80100ce  ldr     r1, [pc, #0x358]             ;ram:200002a0
+80100d0  ldr     r2, [r7]                     ;ram:2000de3c
+80100d2  ldrh    r1, [r1, #0x1e]              ;ram:200002be
+80100d4  cmp     r2, r1                       
+80100d6  beq     #0x80100f8                   
+80100d8  str.w   r1, [r7, r0, lsl #2]         
+80100dc  add.w   r0, r1, r1, lsl #6           
+80100e0  rsb     r0, r0, r0, lsl #3           
+80100e4  movs    r1, #0x64                    
+80100e6  udiv    r0, r0, r1                   
+80100ea  subs    r0, #0xe9                    
+80100ec  sxth    r2, r0                       
+80100ee  movs    r3, #0xa                     
+80100f0  movs    r1, #2                       
+80100f2  ldr     r0, [r4, #8]                 ;ram:2000023c
+80100f4  bl      #0x8021644                   ;obj_align
+80100f8  ldrb    r0, [r4]                     ;ram:20000234
+80100fa  ldr     r2, [pc, #0x330]             ;ram:20000001
+80100fc  adds    r0, r0, #1                   
+80100fe  sxtb    r1, r0                       
+8010100  strb    r1, [r4]                     ;ram:20000234
+8010102  ldrb    r0, [r2]                     ;ram:20000001
+8010104  cbz     r0, #0x8010118               
+8010106  ldrb    r3, [r4, #1]                 ;ram:20000235
+8010108  movs    r5, #0xa                     
+801010a  adds    r3, r3, #1                   
+801010c  udiv    r6, r3, r5                   
+8010110  mls     r3, r5, r6, r3               
+8010114  strb    r3, [r4, #1]                 ;ram:20000235
+8010116  b       #0x801011c                   
+8010118  strb.w  sb, [r4, #1]                 ;ram:20000235
+801011c  ldr     r5, [pc, #0x310]             ;GPIOD.CRL.0
+801011e  ldr.w   r3, [r5, #0x104]             ;GPIOD.IDR.1
+8010122  ldr.w   r6, [r5, #0x100]             ;GPIOD.IDR.0
+8010126  orr.w   r3, r3, r6, lsl #1           
+801012a  ldr     r6, [pc, #0x308]             ;GPIOA.CRL.0
+801012c  ldr.w   ip, [r6, #0x11c]             ;GPIOA.IDR.7
+8010130  mul     r3, r3, ip                   
+8010134  ldrb.w  ip, [r4, #1]                 ;ram:20000235
+8010138  add.w   r2, r0, r3, lsl #2           
+801013c  cmp.w   ip, #5                       
+8010140  bhs     #0x8010146                   
+8010142  movs    r3, #1                       
+8010144  b       #0x8010148                   
+8010146  movs    r3, #0                       
+8010148  ldr.w   lr, [pc, #0x2ec]             ;ram:20000038
+801014c  add.w   r3, r2, r3, lsl #3           
+8010150  mov     sl, r4                       
+8010152  ldrb.w  r2, [lr]                     ;ram:20000038
+8010156  ldr.w   r4, [r7, r1, lsl #2]         
+801015a  add.w   r8, r3, r2, lsl #8           
+801015e  ldr     r3, [pc, #0x2dc]             ;ram:20000039
+8010160  mov     fp, r7                       
+8010162  ldrb    r3, [r3]                     ;ram:20000039
+8010164  add.w   r8, r8, r3, lsl #12          
+8010168  cmp     r8, r4                       
+801016a  beq     #0x801024e                   
+801016c  ldr.w   r4, [r5, #0x104]             ;GPIOD.IDR.1
+8010170  ldr.w   r7, [r5, #0x100]             ;GPIOD.IDR.0
+8010174  orr.w   r4, r4, r7, lsl #1           
+8010178  ldr.w   r7, [r6, #0x11c]             ;GPIOA.IDR.7
+801017c  muls    r4, r7, r4                   
+801017e  ldr     r7, [pc, #0x2ac]             ;ram:20000001
+8010180  add.w   r8, r0, r4, lsl #2           
+8010184  mov     r4, sl                       
+8010186  cmp.w   ip, #5                       
+801018a  bhs     #0x8010192                   
+801018c  mov.w   ip, #1                       
+8010190  b       #0x8010196                   
+8010192  mov.w   ip, #0                       
+8010196  add.w   ip, r8, ip, lsl #3           
+801019a  add.w   ip, ip, r2, lsl #8           
+801019e  add.w   ip, ip, r3, lsl #12          
+80101a2  str.w   ip, [fp, r1, lsl #2]         
+80101a6  mov     r8, lr                       
+80101a8  mov     fp, r7                       
+80101aa  cbnz    r0, #0x80101c6               
+80101ac  ldr.w   r0, [r5, #0x104]             ;GPIOD.IDR.1
+80101b0  ldr.w   r1, [r5, #0x100]             ;GPIOD.IDR.0
+80101b4  orr.w   r0, r0, r1, lsl #1           
+80101b8  ldr.w   r1, [r6, #0x11c]             ;GPIOA.IDR.7
+80101bc  muls    r0, r1, r0                   
+80101be  cmp     r0, #1                       
+80101c0  beq     #0x80101c6                   
+80101c2  cmp     r2, #0                       
+80101c4  beq     #0x80102c2                   
+80101c6  movs    r1, #1                       
+80101c8  ldr     r0, [r4, #8]                 
+80101ca  bl      #0x8021524                   ;HIDE(add_flag)
+80101ce  movs    r1, #1                       
+80101d0  ldr     r0, [r4, #4]                 
+80101d2  bl      #0x8021524                   ;HIDE(add_flag)
+80101d6  movs    r1, #1                       
+80101d8  ldr     r0, [r4, #0xc]               
+80101da  bl      #0x8021ce4                   ;SHOW(clear_flag)
+80101de  movs    r1, #1                       
+80101e0  ldr     r0, [r4, #0x10]              
+80101e2  bl      #0x8021ce4                   ;SHOW(clear_flag)
+80101e6  ldr     r7, [pc, #0x240]             ;ram:200002a0
+80101e8  mov.w   r2, #0                       
+80101ec  ldrh    r0, [r7, #0x16]              ;ram:200002b6
+80101ee  cbz     r0, #0x80101f4               
+80101f0  ldr     r1, [pc, #0x24c]             ;rom:2ce30
+80101f2  b       #0x80101f6                   
+80101f4  ldr     r1, [pc, #0x24c]             ;rom:26f14
+80101f6  ldr     r0, [r4, #0x10]              
+80101f8  bl      #0x8024df6                   ;set_text_font
+80101fc  ldrb.w  r1, [r8]                     
+8010200  cmp     r1, #0                       
+8010202  beq     #0x80102ec                   
+8010204  ldr     r0, [pc, #0x240]             ;GPIOC.CRL.0
+8010206  cmp     r1, #9                       
+8010208  bhs     #0x80102e6                   
+801020a  tbb     [pc, r1]                     
+801020e  lsls    r4, r5, #0x15                
+8010210  movs    r7, #0x21                    
+8010212  strb    r4, [r0, #1]                 ;GPIOC.CRL.0
+8010214  ldrh    r4, [r7, #0x2a]              
+8010216  lsls    r4, r4, #2                   
+8010218  ldr     r0, [pc, #0x230]             ;ram:20000005
+801021a  ldrh    r1, [r7, #0x16]              
+801021c  ldrb    r0, [r0]                     ;ram:20000005
+801021e  cbz     r1, #0x801023a               
+8010220  cmp     r0, #2                       
+8010222  beq     #0x8010234                   
+8010224  cmp     r0, #3                       
+8010226  beq     #0x8010234                   
+8010228  ldrh    r2, [r7, #6]                 
+801022a  adr     r1, #0x224                   ;"滤波器-%d"
+801022c  ldr     r0, [pc, #0x1f0]             ;ram:2000de3c
+801022e  adds    r0, #0x14                    
+8010230  adds    r2, r2, #1                   
+8010232  b       #0x80102e2                   
+8010234  ldrh    r2, [r7, #8]                 
+8010236  adr     r1, #0x228                   ;"DSD滤波器-%d"
+8010238  b       #0x801022c                   
+801023a  cmp     r0, #2                       
+801023c  beq     #0x8010248                   
+801023e  cmp     r0, #3                       
+8010240  beq     #0x8010248                   
+8010242  ldrh    r2, [r7, #6]                 
+8010244  adr     r1, #0x228                   ;"FILTER-%d"
+8010246  b       #0x801022c                   
+8010248  ldrh    r2, [r7, #8]                 
+801024a  adr     r1, #0x230                   ;"DSD FILTER-%d"
+801024c  b       #0x801022c                   
+801024e  b       #0x801040e                   
+8010250  ldrh    r0, [r7, #0x16]              
+8010252  cbz     r0, #0x8010258               
+8010254  adr     r1, #0x234                   ;"清除蓝牙设备"
+8010256  b       #0x801034c                   
+8010258  adr     r1, #0x244                   ;"CLEAR BT"
+801025a  b       #0x801034c                   
+801025c  movs    r2, #0x18                    
+801025e  ldr     r1, [pc, #0x24c]             ;rom:20cf0
+8010260  mov     r0, sp                       
+8010262  bl      #0x800a1ca                   ;memcpy
+8010266  ldr     r1, [pc, #0x244]             ;rom:20cf0
+8010268  movs    r2, #0x18                    
+801026a  adds    r1, #0x18                    
+801026c  add     r0, sp, #0x18                
+801026e  bl      #0x800a1ca                   ;memcpy
+8010272  ldrh    r1, [r7, #0x16]              
+8010274  movs    r0, #6                       
+8010276  cmp     r1, #0                       
+8010278  ldrh    r1, [r7, #2]                 
+801027a  udiv    r2, r1, r0                   
+801027e  mls     r0, r0, r2, r1               
+8010282  beq     #0x801028e                   
+8010284  add     r1, sp, #0x18                
+8010286  ldr.w   r2, [r1, r0, lsl #2]         
+801028a  adr     r1, #0x224                   ;"%s输入"
+801028c  b       #0x80102de                   
+801028e  ldr.w   r2, [sp, r0, lsl #2]         
+8010292  adr     r1, #0x228                   ;"%s IN"
+8010294  b       #0x80102de                   
+8010296  ldr     r0, [pc, #0x214]             ;rom:20cf0
+8010298  add.w   r8, sp, #0x10                
+801029c  adds    r0, #0x30                    
+801029e  ldm.w   r0!, {r1, r2, r3, ip}        
+80102a2  stm.w   sp, {r1, r2, r3, ip}         
+80102a6  ldm     r0, {r0, r1, r2, r3}         
+80102a8  stm.w   r8, {r0, r1, r2, r3}         
+80102ac  ldrh    r0, [r7, #0x16]              
+80102ae  cmp     r0, #0                       
+80102b0  ldr.w   r0, [r5, #0x104]             ;GPIOD.IDR.1
+80102b4  ldr.w   r1, [r5, #0x100]             ;GPIOD.IDR.0
+80102b8  orr.w   r0, r0, r1, lsl #1           
+80102bc  ldr.w   r1, [r6, #0x11c]             ;GPIOA.IDR.7
+80102c0  b       #0x80102c4                   
+80102c2  b       #0x80103de                   
+80102c4  mul     r0, r0, r1                   
+80102c8  and     r0, r0, #3                   
+80102cc  beq     #0x80102d8                   
+80102ce  add     r1, sp, #0x10                
+80102d0  ldr.w   r2, [r1, r0, lsl #2]         
+80102d4  adr     r1, #0x1ec                   ;"%s输出"
+80102d6  b       #0x80102de                   
+80102d8  ldr.w   r2, [sp, r0, lsl #2]         
+80102dc  adr     r1, #0x1f0                   ;"%s OUT"
+80102de  ldr     r0, [pc, #0x140]             ;ram:2000de3c
+80102e0  adds    r0, #0x14                    
+80102e2  bl      #0x80105f8                   ;sprintf
+80102e6  ldr     r1, [pc, #0x138]             ;ram:2000de3c
+80102e8  adds    r1, #0x14                    
+80102ea  b       #0x80103c6                   
+80102ec  b       #0x8010380                   
+80102ee  ldrh    r1, [r7, #0x16]              
+80102f0  ldr.w   r0, [r0, #0x118]             
+80102f4  and     r0, r0, #1                   
+80102f8  cbz     r1, #0x8010300               
+80102fa  ldr     r1, [pc, #0x1b0]             ;rom:20cf0
+80102fc  subs    r1, #8                       
+80102fe  b       #0x8010348                   
+8010300  ldr     r1, [pc, #0x1a8]             ;rom:20cf0
+8010302  subs    r1, #0x10                    
+8010304  b       #0x8010348                   
+8010306  ldrh    r1, [r7, #0x16]              
+8010308  cmp     r1, #0                       
+801030a  ldr.w   r1, [r0, #0x12c]             
+801030e  ldr.w   r0, [r0, #0x130]             
+8010312  orr.w   r0, r1, r0, lsl #1           
+8010316  and     r0, r0, #3                   
+801031a  beq     #0x8010322                   
+801031c  ldr     r1, [pc, #0x18c]             ;rom:20cf0
+801031e  adds    r1, #0x60                    
+8010320  b       #0x8010348                   
+8010322  ldr     r1, [pc, #0x188]             ;rom:20cf0
+8010324  adds    r1, #0x50                    
+8010326  b       #0x8010348                   
+8010328  ldrh    r1, [r7, #0x16]              
+801032a  cmp     r1, #0                       
+801032c  ldr.w   r1, [r6, #0x124]             ;GPIOA.IDR.9
+8010330  ldr.w   r0, [r0, #0x128]             
+8010334  orr.w   r0, r1, r0, lsl #1           
+8010338  and     r0, r0, #3                   
+801033c  beq     #0x8010344                   
+801033e  ldr     r1, [pc, #0x16c]             ;rom:20cf0
+8010340  adds    r1, #0x80                    
+8010342  b       #0x8010348                   
+8010344  ldr     r1, [pc, #0x164]             ;rom:20cf0
+8010346  adds    r1, #0x70                    
+8010348  ldr.w   r1, [r1, r0, lsl #2]         
+801034c  ldr     r0, [pc, #0xd0]              ;ram:2000de3c
+801034e  adds    r0, #0x14                    
+8010350  bl      #0x80105f8                   ;sprintf
+8010354  b       #0x80102e6                   
+8010356  ldr     r1, [pc, #0x154]             ;rom:20cf0
+8010358  adds    r1, #0x90                    
+801035a  ldm     r1, {r1, r2, r3, r5}         
+801035c  stm.w   sp, {r1, r2, r3, r5}         
+8010360  ldr     r1, [pc, #0x174]             ;GPIOB.CRL.0
+8010362  ldrh    r3, [r7, #0x16]              
+8010364  mov     r2, sp                       
+8010366  ldr.w   r1, [r1, #0x11c]             ;GPIOB.IDR.7
+801036a  ldr.w   r0, [r0, #0x100]             
+801036e  cmp     r3, #0                       
+8010370  orr.w   r0, r1, r0, lsl #1           
+8010374  and     r0, r0, #3                   
+8010378  ldr.w   r2, [sp, r0, lsl #2]         
+801037c  bne     #0x80102d4                   
+801037e  b       #0x80102dc                   
+8010380  ldrb.w  r0, [fp]                     
+8010384  cbz     r0, #0x80103a6               
+8010386  ldrb    r0, [r4, #1]                 
+8010388  cmp     r0, #5                       
+801038a  bhs     #0x80103a2                   
+801038c  ldrh    r0, [r7, #0x16]              
+801038e  cbz     r0, #0x8010394               
+8010390  adr     r1, #0x148                   ;"静音"
+8010392  b       #0x8010396                   
+8010394  adr     r1, #0x14c                   ;"MUTE"
+8010396  ldr     r0, [r4, #0x10]              
+8010398  bl      #0x8020e4c                   ;label_set_text
+801039c  mov.w   r0, #0xff0000                
+80103a0  b       #0x80103ce                   
+80103a2  adr     r1, #0x148                   ;rom:64ec
+80103a4  b       #0x8010396                   
+80103a6  ldr.w   r0, [r5, #0x104]             ;GPIOD.IDR.1
+80103aa  ldr.w   r1, [r5, #0x100]             ;GPIOD.IDR.0
+80103ae  orr.w   r0, r0, r1, lsl #1           
+80103b2  ldr.w   r1, [r6, #0x11c]             ;GPIOA.IDR.7
+80103b6  muls    r0, r1, r0                   
+80103b8  cmp     r0, #1                       
+80103ba  bne     #0x80103fe                   
+80103bc  ldrh    r0, [r7, #0x16]              
+80103be  cbz     r0, #0x80103c4               
+80103c0  adr     r1, #0x12c                   ;"纯解码器"
+80103c2  b       #0x80103c6                   
+80103c4  adr     r1, #0x138                   ;"DAC MODE"
+80103c6  ldr     r0, [r4, #0x10]              
+80103c8  bl      #0x8020e4c                   ;label_set_text
+80103cc  movs    r0, #0                       
+80103ce  bl      #0x801bcdc                   ;color_hex
+80103d2  mov     r1, r0                       
+80103d4  movs    r2, #0                       
+80103d6  ldr     r0, [r4, #0x10]              
+80103d8  bl      #0x8024ddc                   ;set_text_color
+80103dc  b       #0x80103fe                   
+80103de  movs    r1, #1                       
+80103e0  ldr     r0, [r4, #8]                 
+80103e2  bl      #0x8021ce4                   ;SHOW(clear_flag)
+80103e6  movs    r1, #1                       
+80103e8  ldr     r0, [r4, #4]                 
+80103ea  bl      #0x8021ce4                   ;SHOW(clear_flag)
+80103ee  movs    r1, #1                       
+80103f0  ldr     r0, [r4, #0xc]               
+80103f2  bl      #0x8021524                   ;HIDE(add_flag)
+80103f6  movs    r1, #1                       
+80103f8  ldr     r0, [r4, #0x10]              
+80103fa  bl      #0x8021524                   ;HIDE(add_flag)
+80103fe  str.w   sb, [sp]                     
+8010402  ldrd    r1, r0, [r4, #0xc]           
+8010406  movs    r3, #0                       
+8010408  movs    r2, #9                       
+801040a  bl      #0x8021660                   ;obj_align_to
+801040e  ldrb.w  r1, [sl]                     
+8010412  adds    r1, r1, #1                   
+8010414  strb.w  r1, [sl]                     
+8010418  add     sp, #0x34                    
+801041a  pop.w   {r4, r5, r6, r7, r8, sb, sl, fp, pc} 
+801041e  movs    r0, r0                       

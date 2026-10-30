@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>A主题写入UI1</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#FFB547}a:hover{color:#FFD08A}
+img{display:block;image-rendering:pixelated}
+</style>
+</helmet>
+<div style="width: 960px; background: #0C0B0A; font-family: 'Noto Sans SC', sans-serif; color: #C9C2B6; display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px">
+  <span style="font-size: 18px; padding: 8px 4px 0">主界面：用补丁固件里读回来的新图拼出来，字的颜色按代码里的实际值</span>
+  <div style="width: 960px; height: 264px; overflow: hidden">
+  <div style="position: relative; width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: #000000; overflow: hidden">
+    <img src="/_blob/b698d1aca65eee0ee0b42b69432b6a7f" alt="新刻度" style="position: absolute; left: 3px; top: 4px; width: 474px; height: 39px">
+    <img src="/_blob/f8a9dd83a4cc21f65714ca04d41fec97" alt="指针（共用，未改）" style="position: absolute; left: 229px; top: 10px; width: 15px; height: 55px">
+    <img src="/_blob/640432e6067127c333f4a69c86a458af" alt="标题牌（共用，未改）" style="position: absolute; left: 151px; top: 6px; width: 178px; height: 34px">
+    <span style="position: absolute; left: 151px; top: 6px; width: 178px; line-height: 34px; text-align: center; font-size: 14px; color: #2A2118; letter-spacing: 2px">纯解码器</span>
+    <img src="/_blob/a69ad420ba082e3a42fbb15e245bddc5" alt="新分隔线" style="position: absolute; left: 4px; top: 45px; width: 465px; height: 4px">
+
+    <img src="/_blob/9803481ac49482f03cf95e7c305268ed" alt="输入框" style="position: absolute; left: 23px; top: 73px; width: 81px; height: 51px">
+    <span style="position: absolute; left: 23px; top: 76px; width: 81px; text-align: center; font-size: 16px; line-height: 20px; font-weight: 700; color: #E8E4DC">USB</span>
+    <span style="position: absolute; left: 23px; top: 101px; width: 81px; text-align: center; font-size: 12px; line-height: 18px; color: #FFFFFF">输入</span>
+    <img src="/_blob/9803481ac49482f03cf95e7c305268ed" alt="输出框" style="position: absolute; left: 376px; top: 73px; width: 81px; height: 51px">
+    <span style="position: absolute; left: 376px; top: 76px; width: 81px; text-align: center; font-size: 16px; line-height: 20px; font-weight: 700; color: #E8E4DC">解码4V</span>
+    <span style="position: absolute; left: 376px; top: 101px; width: 81px; text-align: center; font-size: 12px; line-height: 18px; color: #FFFFFF">输出</span>
+
+    <img src="/_blob/2000fc63df7818855cd61dda23cb0307" alt="采样率框" style="position: absolute; left: 178px; top: 81px; width: 125px; height: 35px">
+    <span style="position: absolute; left: 178px; top: 81px; width: 125px; line-height: 33px; text-align: center; font-size: 18px; color: #FFB544">192 kHz</span>
+
+    <img src="/_blob/b273e9c57084a2b0050b3be19ea45ad4" alt="" style="position: absolute; left: 176px; top: 70px; width: 6px; height: 6px">
+    <span style="position: absolute; left: 185px; top: 66px; font-size: 9px; line-height: 12px; color: #FFFFFF">PCM</span>
+    <span style="position: absolute; left: 232px; top: 66px; font-size: 9px; line-height: 12px; color: #FFFFFF">DSD</span>
+    <span style="position: absolute; left: 279px; top: 66px; font-size: 9px; line-height: 12px; color: #FFFFFF">MQA</span>
+
+    <img src="/_blob/2fdb4b08c3a75ab869d49ca21982eaa7" alt="" style="position: absolute; left: 126px; top: 72px; width: 31px; height: 16px">
+    <span style="position: absolute; left: 126px; top: 72px; width: 31px; line-height: 16px; text-align: center; font-size: 9px; color: #FFFFFF">FIL-2</span>
+    <img src="/_blob/2fdb4b08c3a75ab869d49ca21982eaa7" alt="" style="position: absolute; left: 126px; top: 108px; width: 31px; height: 16px">
+    <span style="position: absolute; left: 126px; top: 108px; width: 31px; line-height: 16px; text-align: center; font-size: 9px; color: #FFFFFF">L</span>
+    <img src="/_blob/2fdb4b08c3a75ab869d49ca21982eaa7" alt="" style="position: absolute; left: 324px; top: 72px; width: 31px; height: 16px">
+    <span style="position: absolute; left: 324px; top: 72px; width: 31px; line-height: 16px; text-align: center; font-size: 9px; color: #FFFFFF">0Ω</span>
+    <img src="/_blob/2fdb4b08c3a75ab869d49ca21982eaa7" alt="" style="position: absolute; left: 324px; top: 108px; width: 31px; height: 16px">
+    <span style="position: absolute; left: 324px; top: 108px; width: 31px; line-height: 16px; text-align: center; font-size: 9px; color: #FFFFFF">OFF</span>
+  </div>
+  </div>
+
+  <span style="font-size: 18px; padding: 8px 4px 0">设置菜单：菜单底板是两套共用的，没改；只换了选中框</span>
+  <div style="width: 960px; height: 264px; overflow: hidden">
+  <div style="position: relative; width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: #000000; overflow: hidden">
+    <img src="/_blob/6f491bcb0bb726acd551ada441279cb6" alt="菜单底板（共用，未改）" style="position: absolute; left: 49px; top: 63px; width: 382px; height: 55px">
+    <span style="position: absolute; left: 0; top: 66px; width: 480px; text-align: center; font-size: 12px; line-height: 18px; color: #F5CE84">背景菜单</span>
+    <img src="/_blob/955a6f4fe1f6d7e3335844cdf0a9724b" alt="新选中框" style="position: absolute; left: 176px; top: 86px; width: 127px; height: 36px">
+    <span style="position: absolute; left: 176px; top: 86px; width: 127px; line-height: 36px; text-align: center; font-size: 12px; color: #FFFFFF">屏幕亮度</span>
+  </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 4px 4px 0; font-size: 14px; line-height: 22px">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 16px; font-weight: 700; color: #FFB547">已写进补丁副本</span>
+      <span>UI1 专用的 7 张图：刻度、分隔线、输入/输出框、采样率框、状态小块、指示点、菜单选中框</span>
+      <span>UI1 专用的 3 个字色：采样率 → 琥珀 #FFB544，USB/解码4V（两处）→ 暖白 #E8E4DC</span>
+      <span>UI2（金框那套）一个字节都没动</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 16px; font-weight: 700; color: #FF6A3D">改不了 / 没改</span>
+      <span>白色字是代码直接算出来的：PCM/DSD/MQA、输入/输出、状态小块和选中项里的字</span>
+      <span>标题牌、指针、菜单底板、弹窗是两套共用的，改了会连 UI2 一起变</span>
+      <span>菜单标题的金字压在米色底板上，改了也不会更清楚，保持原样</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":960,"height":760}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

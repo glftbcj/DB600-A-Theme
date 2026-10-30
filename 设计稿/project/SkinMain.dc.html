@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>换皮主界面 VU表盘风</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C42A1C}a:hover{color:#8E1D13}
+</style>
+</helmet>
+<div style="width: 960px; height: 264px; overflow: hidden; background: #0C0B0A; font-family: 'Noto Serif SC', serif">
+<div style="position: relative; width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: {{bg}}; overflow: hidden">
+
+  <div style="position: absolute; left: 151px; top: 6px; width: 178px; height: 34px; box-sizing: border-box; border: 2px solid #1A1410; border-radius: 3px; background: {{card}}; display: flex; align-items: center; justify-content: center">
+    <span style="font-size: 15px; color: #1A1410; letter-spacing: 3px">纯解码器</span>
+  </div>
+
+  <div style="position: absolute; left: 4px; top: 45px; width: 465px; height: 4px; background: repeating-linear-gradient(90deg, #1A1410 0 1px, transparent 1px 8px) 0 0 / 80% 3px no-repeat, repeating-linear-gradient(90deg, {{red}} 0 1px, transparent 1px 8px) 100% 0 / 20% 3px no-repeat, linear-gradient(90deg, #1A1410 80%, {{red}} 80%) 0 3px / 100% 1px no-repeat"></div>
+
+  <div style="position: absolute; left: 23px; top: 73px; width: 81px; height: 51px; box-sizing: border-box; border: 2px solid #1A1410; border-radius: 3px; background: {{card}}; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px">
+    <span style="font-size: 16px; line-height: 19px; color: {{main}}; font-weight: 600">USB</span>
+    <div style="width: 54px; height: 1px; background: #C99A5E"></div>
+    <span style="font-size: 13px; line-height: 18px; color: {{sub}}">输入</span>
+  </div>
+
+  <div style="position: absolute; left: 376px; top: 73px; width: 81px; height: 51px; box-sizing: border-box; border: 2px solid #1A1410; border-radius: 3px; background: {{card}}; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px">
+    <span style="font-size: 16px; line-height: 19px; color: {{main}}; font-weight: 600">解码4V</span>
+    <div style="width: 54px; height: 1px; background: #C99A5E"></div>
+    <span style="font-size: 13px; line-height: 18px; color: {{sub}}">输出</span>
+  </div>
+
+  <div style="position: absolute; left: 177px; top: 80px; width: 126px; height: 36px; box-sizing: border-box; border: 2px solid #1A1410; border-radius: 3px; background: {{card}}; display: flex; align-items: center; justify-content: center">
+    <span style="font-size: 18px; color: #1A1410">192 kHz</span>
+  </div>
+
+  <div style="position: absolute; left: 176px; top: 70px; width: 6px; height: 6px; border-radius: 3px; background: {{red}}"></div>
+  <span style="position: absolute; left: 185px; top: 66px; font-size: 9px; line-height: 12px; color: #1A1410">PCM</span>
+  <div style="position: absolute; left: 223px; top: 70px; width: 6px; height: 6px; border-radius: 3px; box-sizing: border-box; border: 1px solid #1A1410"></div>
+  <span style="position: absolute; left: 232px; top: 66px; font-size: 9px; line-height: 12px; color: #1A1410">DSD</span>
+  <div style="position: absolute; left: 270px; top: 70px; width: 6px; height: 6px; border-radius: 3px; box-sizing: border-box; border: 1px solid #1A1410"></div>
+  <span style="position: absolute; left: 279px; top: 66px; font-size: 9px; line-height: 12px; color: #1A1410">MQA</span>
+
+  <div style="position: absolute; left: 126px; top: 72px; width: 31px; height: 16px; box-sizing: border-box; border: 1px solid #1A1410; border-radius: 2px; background: {{red}}; display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; color: #FFFFFF">FIL-2</span></div>
+  <div style="position: absolute; left: 126px; top: 108px; width: 31px; height: 16px; box-sizing: border-box; border: 1px solid #1A1410; border-radius: 2px; background: {{red}}; display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; color: #FFFFFF">L</span></div>
+  <div style="position: absolute; left: 324px; top: 72px; width: 31px; height: 16px; box-sizing: border-box; border: 1px solid #1A1410; border-radius: 2px; background: {{red}}; display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; color: #FFFFFF">0Ω</span></div>
+  <div style="position: absolute; left: 324px; top: 108px; width: 31px; height: 16px; box-sizing: border-box; border: 1px solid #1A1410; border-radius: 2px; background: {{red}}; display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; color: #FFFFFF">OFF</span></div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"bg":{"editor":"color","default":"#F2C38A","options":["#F2C38A","#F6D3A6","#EFB27C"]},"card":{"editor":"color","default":"#FBE4C2","options":["#FBE4C2","#FFF1DC"]},"red":{"editor":"color","default":"#C42A1C","options":["#C42A1C","#D9401F","#9E2016"]},"main":{"editor":"color","default":"#1A1410","options":["#1A1410","#C42A1C"]},"sub":{"editor":"color","default":"#7A4A22","options":["#7A4A22","#5A3A1E","#1A1410"]},"$preview":{"width":960,"height":264}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+  bg: this.props.bg ?? '#F2C38A', card: this.props.card ?? '#FBE4C2', red: this.props.red ?? '#C42A1C',
+  main: this.props.main ?? '#1A1410', sub: this.props.sub ?? '#7A4A22'
+};
+}
+}
+</script>
+</body>
+</html>

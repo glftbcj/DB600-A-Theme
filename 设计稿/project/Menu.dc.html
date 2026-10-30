@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>DB600 设置菜单</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Barlow+Condensed:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#FFB547}a:hover{color:#FFD08A}
+</style>
+</helmet>
+<div style="width: 960px; height: 264px; overflow: hidden; background: #000000; font-family: 'Noto Sans SC', sans-serif">
+<div style="width: 480px; height: 132px; transform: scale(2); transform-origin: 0 0; background: #0B0B0C; color: #E8E4DC; display: flex; box-sizing: border-box">
+  <div style="width: 150px; display: flex; flex-direction: column; justify-content: center; padding: 0 0 0 8px; gap: 1px; border-right: 1px solid #2A2724">
+    <span style="font-size: 11px; height: 18px; line-height: 18px; padding-left: 8px; color: #6E685F">PCM 滤波器</span>
+    <span style="font-size: 11px; height: 18px; line-height: 18px; padding-left: 8px; color: #8C857B">DSD 滤波器</span>
+    <span style="font-size: 12px; font-weight: 700; height: 22px; line-height: 22px; padding-left: 8px; background: {{accent}}; color: #0B0B0C; border-radius: 2px 0 0 2px">屏幕亮度</span>
+    <span style="font-size: 11px; height: 18px; line-height: 18px; padding-left: 8px; color: #8C857B">红外遥控</span>
+    <span style="font-size: 11px; height: 18px; line-height: 18px; padding-left: 8px; color: #6E685F">语言 Language</span>
+  </div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 18px; gap: 10px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline">
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1px; color: #8C857B">BRIGHTNESS</span>
+      <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 600; line-height: 34px; color: {{accent}}">7</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; height: 10px">
+      <sc-for list="{{segs}}" as="s" hint-placeholder-count="10">
+        <div style="border-radius: 1px; background: {{s.color}}"></div>
+      </sc-for>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-size: 10px; color: #6E685F">
+      <span>旋钮 调节</span>
+      <span>按下 确认 · MENU 返回</span>
+    </div>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FFB547","options":["#FFB547","#FF6A3D","#7FD8C8","#E8E4DC"]},"$preview":{"width":960,"height":264}}'>
+class Component extends DCLogic {
+renderVals() {
+const accent = this.props.accent ?? '#FFB547';
+const segs = Array.from({ length: 10 }, (_, i) => ({ color: i < 7 ? accent : '#2A2724' }));
+return { accent, segs };
+}
+}
+</script>
+</body>
+</html>

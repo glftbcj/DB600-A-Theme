@@ -1,0 +1,9 @@
+font73 (line 73px, 26f14): 215 glyphs
+  ASCII:  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+  other(119): ²Ω个中主亮休位低侬保光入全关具内出分切动单卡压口右同启器回在增备复外失姆字定对屏工左幕平应底度开式意抗持换放数文时显曲有机框模欧正没波注清滤牙率用电界的益直眠码确示禁秒端红纤纯线组耳联菜蓝衡解言设语误路轴输返通部钟错长闭阻除静面音频高：
+font39 (line 39px, 27a80): 97 glyphs
+  ASCII:  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+  other(1): Ω
+font21 (line 21px, 2ce30): 222 glyphs
+  ASCII:  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+  other(126): ²Ω个中主亮休位低侬保光入全关具内出分切前动单卡压口右同启器回在增备复外失姆字定对屏工左幕平应底度开式意抗持换控放数文时显景曲有机框模欧正没波注清滤牙率用电界的益直眠码确示禁秒端红纤级纯线组耳联背菜蓝衡解言设语误超路轴输返通遥部钟错长闭阻除静面音频高：
